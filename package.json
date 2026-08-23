@@ -1,0 +1,19 @@
+{
+  "name": "kings-superlatives",
+  "version": "1.0.0",
+  "description": "The Kings Groupchat Official Superlatives, Yearbooks & Lore Archive (2024-2026)",
+  "main": "SUPERLATIVES.html",
+  "scripts": {
+    "check": "npx @biomejs/biome check --write .",
+    "deploy": "madethis upload SUPERLATIVES.html"
+  },
+  "keywords": [
+    "kings",
+    "superlatives",
+    "groupchat",
+    "yearbook",
+    "lore"
+  ],
+  "author": "The Kings",
+  "license": "MIT"
+}

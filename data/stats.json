@@ -1,0 +1,30 @@
+{
+  "sender_counts": {
+    "Lucas": 4552,
+    "Sami": 13117,
+    "Vasa": 5600,
+    "Alex Wang": 2501,
+    "Jdon": 9614,
+    "Kidus": 1370,
+    "Shane": 4826,
+    "Ben": 5420,
+    "Raj": 3031,
+    "+13016934649": 23,
+    "King (User)": 620,
+    "Dustin": 464,
+    "Unknown": 9
+  },
+  "mentions_counts": {
+    "Lucas": 1014,
+    "Kidus": 331,
+    "Shane": 714,
+    "Jdon": 638,
+    "Ben": 430,
+    "Sami": 822,
+    "Raj": 540,
+    "Alex": 506,
+    "Vasa": 483,
+    "King": 32,
+    "Dustin": 1
+  }
+}
