@@ -636,7 +636,7 @@
       <span>THE KINGS</span>
     </div>
     <div class="nav-tabs">
-      <button type="button" class="nav-tab-btn active" id="tabAwardsBtn" onclick="handleNavClick('awards')">🏆 Awards</button>
+      <button type="button" class="nav-tab-btn active" id="tabAwardsBtn" onclick="handleNavClick('awards')">🏆 Awards (32)</button>
       <button type="button" class="nav-tab-btn" id="tabWrappedBtn" onclick="handleNavClick('wrapped')">📊 Wrapped</button>
       <button type="button" class="nav-tab-btn" id="tabDiplomaBtn" onclick="handleNavClick('diploma')">📜 Diploma</button>
     </div>
@@ -649,10 +649,10 @@
       <div class="hero">
         <div class="hero-badge">
           <div class="pulse-dot"></div>
-          Official 2024–2026 Yearbook Edition
+          Official 2024–2026 Archive Edition
         </div>
         <h1 class="hero-title">The Kings Superlatives</h1>
-        <p class="hero-desc">30 legendary awards, crime-fighting pursuits, $2,000 DoorDash redemption arcs, and unhinged moments mined from 51,147 iMessages.</p>
+        <p class="hero-desc">From the original October 2024 nominations to the 2026 summer road trips, $2,000 DoorDash arcs, and midnight car-thief pursuits across 51,147 iMessages.</p>
       </div>
 
       <!-- Quick Metrics Bar -->
@@ -662,16 +662,16 @@
           <div class="stat-label">Total Texts</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">30</div>
-          <div class="stat-label">Awards</div>
+          <div class="stat-num">32</div>
+          <div class="stat-label">Superlatives</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">$2,000</div>
           <div class="stat-label">DoorDash Repaid</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">8x</div>
-          <div class="stat-label">Vasa Ties His Tie</div>
+          <div class="stat-num">2024-2026</div>
+          <div class="stat-label">Years Archived</div>
         </div>
       </div>
 
@@ -688,7 +688,9 @@
         </div>
 
         <div class="member-chips" id="memberChips">
-          <button type="button" class="chip-btn active" data-filter="all" onclick="handleChipClick(this, 'all')">All Kings (30)</button>
+          <button type="button" class="chip-btn active" data-filter="all" onclick="handleChipClick(this, 'all')">All Kings (32)</button>
+          <button type="button" class="chip-btn" data-filter="2024 Classic" onclick="handleChipClick(this, '2024 Classic')">📜 2024 Classics</button>
+          <button type="button" class="chip-btn" data-filter="2026 Legend" onclick="handleChipClick(this, '2026 Legend')">⚡ 2026 Legends</button>
           <button type="button" class="chip-btn" data-filter="Jdon" onclick="handleChipClick(this, 'Jdon')">🚗 Jdon</button>
           <button type="button" class="chip-btn" data-filter="Sami" onclick="handleChipClick(this, 'Sami')">⚡ Sami</button>
           <button type="button" class="chip-btn" data-filter="Vasa" onclick="handleChipClick(this, 'Vasa')">👔 Vasa</button>
@@ -706,14 +708,444 @@
       <!-- Superlatives Cards Grid (Statically populated in HTML) -->
       <div class="awards-grid" id="awardsGrid">
 
-    <div class="award-card" data-tags="jdon lucas sami shane mazda jdon lucas street legend" data-winner="Jdon">
+    <div class="award-card" data-tags="vasa sami silver diner 2024 classic vasa sami 2024 classic" data-winner="Vasa">
       <div>
         <div class="card-top">
-          <span class="category-tag">Street Legend</span>
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🥞</span>
+        </div>
+
+        <h3 class="award-name">#1 Most Likely to Clutch for the Boys at Silver Diner</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Vasa</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Sami</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Vasa</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to clutch for the boys at silver diner&rdquo;
+            <div class="tapback">❤️ Loved by 4</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Voted unanimously in the October 2024 session as the undisputed provider who always pulls through at 3 AM Silver Diner runs.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Unlimited Silver Diner Lumberjack Breakfast Pass</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Clutch for the Boys at Silver Diner', 'Vasa', 'Most likely to clutch for the boys at silver diner')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="raj shane valentino 2024 classic raj shane 2024 classic" data-winner="Raj">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">👟</span>
+        </div>
+
+        <h3 class="award-name">#2 Most Likely to Steal from a Jobless Mother of 4 to Cop Valentino</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Raj</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Raj</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to steal from a jobless mother of 4 to cop some valentino&rdquo;
+            <div class="tapback">❤️ Loved by Vasa & Kidus</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Raj's infamous designer drip nomination in October 2024 that had the entire groupchat crying with laughter.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Valentino Rockstud Sneaker Box & Moral Compass</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Steal from a Jobless Mother of 4 to Cop Valentino', 'Raj', 'Most likely to steal from a jobless mother of 4 to cop some valentino')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="kidus lucas two man 2024 classic kidus lucas 2024 classic" data-winner="Kidus">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🤦‍♂️</span>
+        </div>
+
+        <h3 class="award-name">#3 Most Likely to Fumble the Two-Man</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Kidus</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Lucas</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Kidus</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to fumble the two man&rdquo;
+            <div class="tapback">❤️ Loved by 5</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Nominated by Kidus himself and immediately validated by Shane, Vasa, Lucas, and Raj with instant hearts.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Official Wingman Training Manual & Safety Whistle</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Fumble the Two-Man', 'Kidus', 'Most likely to fumble the two man')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="king jdon two man 2024 classic king (host) jdon 2024 classic" data-winner="King (Host)">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🫡</span>
+        </div>
+
+        <h3 class="award-name">#4 Most Likely to Tap the Fat Bitch on the Two-Man</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">King (Host)</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Jdon</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">King</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to tap the fat bitch on the two man&rdquo;
+            <div class="tapback">❤️ Loved by Alex, Kidus, Vasa</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Taking one for the team so the boys could secure the win during the legendary October 2024 nominations.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Purple Heart of Groupchat Martyrdom</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Tap the Fat Bitch on the Two-Man', 'King (Host)', 'Most likely to tap the fat bitch on the two man')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="kidus lil mf boi habesha 2024 classic kidus lil mf boi 2024 classic" data-winner="Kidus">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🕊️</span>
+        </div>
+
+        <h3 class="award-name">#5 Most Likely to Go to Habesha Heaven</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Kidus</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Lil Mf Boi</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Lil Mf Boi</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to go to habesha heaven&rdquo;
+            <div class="tapback">❤️ Loved by Vasa</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Lil Mf Boi's classic October 2024 nomination recognizing Kidus's cultural purity and righteous spirit.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Golden Injera Plate & Halal Angel Wings</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Go to Habesha Heaven', 'Kidus', 'Most likely to go to habesha heaven')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="lil mf boi shane 2024 classic lil mf boi shane 2024 classic" data-winner="Lil Mf Boi">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🧅</span>
+        </div>
+
+        <h3 class="award-name">#6 Most Likely to Smell Like Onions</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Lil Mf Boi</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Lil Mf Boi</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to smell like onions&rdquo;
+            <div class="tapback">❤️ Loved by Vasa</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">The random, unprovoked olfactory attack dropped into the October 2024 superlatives nomination chat.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> 3-Pack of Old Spice Deodorant & Mint Breath Spray</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Smell Like Onions', 'Lil Mf Boi', 'Most likely to smell like onions')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="vasa shane vietnam 2024 classic vasa shane 2024 classic" data-winner="Vasa">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🇻🇳</span>
+        </div>
+
+        <h3 class="award-name">#7 Most Likely to Settle in Vietnam and Marry a Drone with Fake Tits</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Vasa</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Vasa</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to struggle to find a job and wife and then get angry with America and white women and settle in Vietnam and marry some brainless viet drone with fake tits&rdquo;
+            <div class="tapback">❤️ Loved by Shane & Kidus</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Vasa's ultra-specific, 30-word geopolitical romantic crashout monologue in October 2024.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> One-Way Ticket to Da Nang & Vietnamese Dictionary</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Settle in Vietnam and Marry a Drone with Fake Tits', 'Vasa', 'Most likely to struggle to find a job and wife and then get angry with America and white women and settle in Vietnam and marry some brainless viet drone with fake tits')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="jdon shane driving 2024 classic jdon shane 2024 classic" data-winner="Jdon">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🏎️</span>
+        </div>
+
+        <h3 class="award-name">#8 Most Likely to Touge Off a Cliff</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Jdon</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Vasa</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to togue off a cliff&rdquo;
+            <div class="tapback">❤️ Loved by Kidus</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Voted for the absolute wildest mountain road drifting and reckless highway whipping.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Initial D Racing Gloves & Roll Cage Voucher</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Touge Off a Cliff', 'Jdon', 'Most likely to togue off a cliff')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="alex king money 2024 classic alex wang king 2024 classic" data-winner="Alex Wang">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">💰</span>
+        </div>
+
+        <h3 class="award-name">#9 Most Likely to Get a Million First</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Alex Wang</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">King</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">King</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to get a million first&rdquo;
+            <div class="tapback">❤️ Loved by Vasa & Raj</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">The ultimate financial projection voted in October 2024 between tech genius Alex Wang and quantitative mastermind King.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Commemorative $1,000,000 Bill & Silicon Valley Seed Check</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Get a Million First', 'Alex Wang', 'Most likely to get a million first')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="lucas sami 2024 classic lucas sami 2024 classic" data-winner="Lucas">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2024 Classic</span>
+          <span class="award-icon-badge">🏊‍♂️</span>
+        </div>
+
+        <h3 class="award-name">#10 Most Likely to Go Skinny Dipping while in a Relationship</h3>
+
+        <div class="podium-box">
+          <div class="podium-row">
+            <span class="winner-label">🏆 Winner:</span>
+            <strong style="color: #FFF; font-size: 1.05rem;">Lucas</strong>
+          </div>
+          <div class="podium-row">
+            <span class="runner-label">🥈 Runner-Up:</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Sami</span>
+          </div>
+        </div>
+
+        <div class="imessage-wrap">
+          <div class="imessage-sender-tag">Lucas</div>
+          <div class="imessage-bubble">
+            &ldquo;Most likely to go skinny dipping with another girl while in a relationship&rdquo;
+            <div class="tapback">❤️ Loved</div>
+          </div>
+        </div>
+
+        <p class="incident-narrative">Lucas's dangerously specific self-report in the October 2024 superlatives thread.</p>
+      </div>
+
+      <div>
+        <div class="prize-tag">
+          <span>🎁</span>
+          <span><strong>Prize:</strong> Microfiber Swim Trunks & Alibi Generator</span>
+        </div>
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Go Skinny Dipping while in a Relationship', 'Lucas', 'Most likely to go skinny dipping with another girl while in a relationship')">
+          <span>📲</span> Copy for iMessage
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="award-card" data-tags="jdon lucas sami shane mazda jdon lucas 2026 legend" data-winner="Jdon">
+      <div>
+        <div class="card-top">
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🚗</span>
         </div>
 
-        <h3 class="award-name">#1 The High-Beam Vigilante & Neighborhood Watch Trophy</h3>
+        <h3 class="award-name">#11 The High-Beam Vigilante & Neighborhood Watch Trophy</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -734,7 +1166,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">Jdon spotted a car thief breaking into a red Mazda by Vasa's crib, threw the car in reverse, blasted high beams, and initiated a pursuit while Lucas sprinted uphill preparing for a hostage rescue.</p>
+        <p class="incident-narrative">Jdon spotted a car thief breaking into a red Mazda by Vasa's crib, reversed the whip, blasted high beams, and gave chase while Lucas sprinted uphill preparing for a hostage rescue.</p>
       </div>
 
       <div>
@@ -749,14 +1181,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="jdon doordash pr honor jdon shane honor & grind" data-winner="Jdon">
+    <div class="award-card" data-tags="jdon doordash pr honor jdon shane 2026 legend" data-winner="Jdon">
       <div>
         <div class="card-top">
-          <span class="category-tag">Honor & Grind</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🛵</span>
         </div>
 
-        <h3 class="award-name">#2 The $2,000 DoorDash Honor & Redemption Medal</h3>
+        <h3 class="award-name">#12 The $2,000 DoorDash Honor & Redemption Medal</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -777,7 +1209,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">After getting scammed $2,000 on fake IDs in Puerto Rico, Jdon grinded DoorDash delivery shifts day and night with his own gas money to repay the boys in full.</p>
+        <p class="incident-narrative">After getting scammed $2,000 on fake IDs in Puerto Rico, Jdon delivered DoorDash orders brick-by-brick with his own gas money to repay the boys in full.</p>
       </div>
 
       <div>
@@ -792,14 +1224,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="sami hype pr speed sami jdon communication" data-winner="Sami">
+    <div class="award-card" data-tags="sami hype pr speed sami jdon 2026 legend" data-winner="Sami">
       <div>
         <div class="card-top">
-          <span class="category-tag">Communication</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">⚡</span>
         </div>
 
-        <h3 class="award-name">#3 The 13,000-Text Hype General & Speed Typing Award</h3>
+        <h3 class="award-name">#13 The 13,000-Text Hype General & Speed Typing Award</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -835,14 +1267,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="sami shane ben fortnite sami ben gaming chaos" data-winner="Sami">
+    <div class="award-card" data-tags="sami shane ben fortnite sami ben 2026 legend" data-winner="Sami">
       <div>
         <div class="card-top">
-          <span class="category-tag">Gaming Chaos</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🪵</span>
         </div>
 
-        <h3 class="award-name">#4 The Wooden Slingshot in Fortnite Reload Disaster</h3>
+        <h3 class="award-name">#14 The Wooden Slingshot in Fortnite Reload Disaster</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -863,7 +1295,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">Shane and Ben convinced Sami to hop on Fortnite Reload claiming the lobby was casual, only for Sami to open a chest and get handed a wooden slingshot against assault rifles.</p>
+        <p class="incident-narrative">Shane and Ben convinced Sami to hop on Fortnite Reload claiming the lobby was casual, only for Sami to drop in and get handed a wooden slingshot against assault rifles.</p>
       </div>
 
       <div>
@@ -878,14 +1310,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="sami kidus fishing sami kidus maritime survival" data-winner="Sami">
+    <div class="award-card" data-tags="sami kidus fishing sami kidus 2026 legend" data-winner="Sami">
       <div>
         <div class="card-top">
-          <span class="category-tag">Maritime Survival</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🎣</span>
         </div>
 
-        <h3 class="award-name">#5 The Near-Death Fishing Trip Survival Trophy</h3>
+        <h3 class="award-name">#15 The Near-Death Fishing Trip Survival Trophy</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -906,7 +1338,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">A casual afternoon fishing trip turned into a nautical crisis when Sami's navigation and boat choices nearly sent half the groupchat straight into the Potomac River.</p>
+        <p class="incident-narrative">A casual afternoon fishing trip turned into a nautical crisis when Sami's navigation nearly capsized the boat on the Potomac.</p>
       </div>
 
       <div>
@@ -921,14 +1353,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="vasa london tube finance vasa ben corporate wolf" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa london tube finance vasa ben 2026 legend" data-winner="Vasa">
       <div>
         <div class="card-top">
-          <span class="category-tag">Corporate Wolf</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">👔</span>
         </div>
 
-        <h3 class="award-name">#6 The London Tube Tie-Tying & Corporate Wall Street Soliloquy</h3>
+        <h3 class="award-name">#16 The London Tube Tie-Tying & Wall Street Soliloquy</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -957,21 +1389,21 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Pre-Tied Silk Clip-On Tie & Tube Oyster Pass</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The London Tube Tie-Tying & Corporate Wall Street Soliloquy', 'Vasa', 'Wake up at 6am pull myself out of bed retie my tie 8 times get on the tube get in around 7/7:30ish. check emails teams then check in w my boss do some pricing models...')">
+        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The London Tube Tie-Tying & Wall Street Soliloquy', 'Vasa', 'Wake up at 6am pull myself out of bed retie my tie 8 times get on the tube get in around 7/7:30ish. check emails teams then check in w my boss do some pricing models...')">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa philosophy neo bagel vasa shane philosophy" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa philosophy neo bagel vasa shane 2026 legend" data-winner="Vasa">
       <div>
         <div class="card-top">
-          <span class="category-tag">Philosophy</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🥯</span>
         </div>
 
-        <h3 class="award-name">#7 The Wholesome Existential Monologue & Hummus Bagel Medal</h3>
+        <h3 class="award-name">#17 The Wholesome Existential Monologue & Hummus Bagel Medal</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -992,7 +1424,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">Reminded the GC at 2 AM why their lives are blessed: we all fit, not virgins, some heads have cats, some have Neo the dog, and some have hummus bagels.</p>
+        <p class="incident-narrative">Reminded the GC at 2 AM why life is great: we all fit, not virgins, some heads have cats, some have Neo the dog, and some have hummus bagels.</p>
       </div>
 
       <div>
@@ -1007,14 +1439,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="vasa alex lucas movie milk vasa alex hospitality" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa alex lucas movie milk vasa alex 2026 legend" data-winner="Vasa">
       <div>
         <div class="card-top">
-          <span class="category-tag">Hospitality</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🥛</span>
         </div>
 
-        <h3 class="award-name">#8 The Saturday Movie Night Milk & Cookie Custodian</h3>
+        <h3 class="award-name">#18 The Saturday Movie Night Milk & Cookie Custodian</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1050,14 +1482,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="ben vasa shane leyna ben shane romance lore" data-winner="Ben">
+    <div class="award-card" data-tags="ben vasa shane leyna ben shane 2026 legend" data-winner="Ben">
       <div>
         <div class="card-top">
-          <span class="category-tag">Romance Lore</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🧸</span>
         </div>
 
-        <h3 class="award-name">#9 The 'Sister Freak' & Bear Eyes Immunity Award</h3>
+        <h3 class="award-name">#19 The 'Sister Freak' & Bear Eyes Immunity Award</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1093,14 +1525,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="ben alex cookies tariffs ben alex financial law" data-winner="Ben">
+    <div class="award-card" data-tags="ben alex cookies tariffs ben alex 2026 legend" data-winner="Ben">
       <div>
         <div class="card-top">
-          <span class="category-tag">Financial Law</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🍪</span>
         </div>
 
-        <h3 class="award-name">#10 The $15 Stolen Snack Border Patrol Enforcer</h3>
+        <h3 class="award-name">#20 The $15 Stolen Snack Border Patrol Enforcer</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1121,7 +1553,7 @@
           </div>
         </div>
 
-        <p class="incident-narrative">Instituted strict international snack tariffs with instant fine enforcement to protect social gathering provisions.</p>
+        <p class="incident-narrative">Instituted strict international snack tariffs with instant fine enforcement to protect party provisions.</p>
       </div>
 
       <div>
@@ -1136,14 +1568,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="shane parlay world cup var shane sami degenerate parlays" data-winner="Shane">
+    <div class="award-card" data-tags="shane parlay world cup var shane sami 2026 legend" data-winner="Shane">
       <div>
         <div class="card-top">
-          <span class="category-tag">Degenerate Parlays</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">📉</span>
         </div>
 
-        <h3 class="award-name">#11 The 95th-Minute VAR Offside & World Cup Heartbreak</h3>
+        <h3 class="award-name">#21 The 95th-Minute VAR Offside & World Cup Heartbreak</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1179,14 +1611,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="shane mcdonalds nuggets math shane vasa accounting" data-winner="Shane">
+    <div class="award-card" data-tags="shane mcdonalds nuggets math shane vasa 2026 legend" data-winner="Shane">
       <div>
         <div class="card-top">
-          <span class="category-tag">Accounting</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🍟</span>
         </div>
 
-        <h3 class="award-name">#12 The Cent-by-Cent McDonald's Financial Accountant</h3>
+        <h3 class="award-name">#22 The Cent-by-Cent McDonald's Financial Accountant</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1232,57 +1664,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="shane lucas ben stan shane lucas dark comedy" data-winner="Shane">
+    <div class="award-card" data-tags="lucas running handsome lesbian lucas sami 2026 legend" data-winner="Lucas">
       <div>
         <div class="card-top">
-          <span class="category-tag">Dark Comedy</span>
-          <span class="award-icon-badge">🌉</span>
-        </div>
-
-        <h3 class="award-name">#13 The Eminem 'Stan' Bay Bridge Hypothetical Prize</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Shane</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Lucas</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Shane</div>
-          <div class="imessage-bubble">
-            &ldquo;-> pre game practice -> drunk practice -> pregame dc -> blackout in dc -> fuck a hooker -> kill the hooker -> play the song “stan” with the dead hooker in your trunk -> drive off the bay bridge&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Casually drafted a 7-step psychological thriller itinerary for weekend plans in DC that left the entire GC in stitches.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> The Marshall Mathers LP Cassette Tape</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Eminem 'Stan' Bay Bridge Hypothetical Prize', 'Shane', '-> pre game practice -> drunk practice -> pregame dc -> blackout in dc -> fuck a hooker -> kill the hooker -> play the song “stan” with the dead hooker in your trunk -> drive off the bay bridge')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="lucas running handsome lesbian lucas sami athletics" data-winner="Lucas">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Athletics</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🏃</span>
         </div>
 
-        <h3 class="award-name">#14 The 'Handsome Lesbian' 5-Mile Marathon Crown</h3>
+        <h3 class="award-name">#23 The 'Handsome Lesbian' 5-Mile Marathon Crown</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1318,14 +1707,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="lucas sami va beach lucas sami travel chaos" data-winner="Lucas">
+    <div class="award-card" data-tags="lucas sami va beach lucas sami 2026 legend" data-winner="Lucas">
       <div>
         <div class="card-top">
-          <span class="category-tag">Travel Chaos</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🏖️</span>
         </div>
 
-        <h3 class="award-name">#15 The 6-Man Bunk & VA Beach Sidewalk Eviction</h3>
+        <h3 class="award-name">#24 The 6-Man Bunk & VA Beach Sidewalk Eviction</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1361,14 +1750,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="alex ghost light cookies alex raj stealth tech" data-winner="Alex">
+    <div class="award-card" data-tags="alex ghost light cookies alex raj 2026 legend" data-winner="Alex">
       <div>
         <div class="card-top">
-          <span class="category-tag">Stealth Tech</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">💡</span>
         </div>
 
-        <h3 class="award-name">#16 The 'Light in Dark Times' & GC Ghost Trophy</h3>
+        <h3 class="award-name">#25 The 'Light in Dark Times' & GC Ghost Trophy</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1404,14 +1793,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="alex ai prompt goblin mode alex king ai wizardry" data-winner="Alex">
+    <div class="award-card" data-tags="alex ai prompt goblin mode alex king 2026 legend" data-winner="Alex">
       <div>
         <div class="card-top">
-          <span class="category-tag">AI Wizardry</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🧙‍♂️</span>
         </div>
 
-        <h3 class="award-name">#17 The Extreme Goblin Mode Prompt Injection Wizard</h3>
+        <h3 class="award-name">#26 The Extreme Goblin Mode Prompt Injection Wizard</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1447,57 +1836,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="alex movies se7en brad pitt alex vasa film criticism" data-winner="Alex">
+    <div class="award-card" data-tags="kidus tsa airport swab kidus sami 2026 legend" data-winner="Kidus">
       <div>
         <div class="card-top">
-          <span class="category-tag">Film Criticism</span>
-          <span class="award-icon-badge">🎬</span>
-        </div>
-
-        <h3 class="award-name">#18 The David Fincher & Brad Pitt 'Se7en' Cinema Critic</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Alex</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Vasa</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Alex</div>
-          <div class="imessage-bubble">
-            &ldquo;Ts is one of those movies that just stays in your head because it isn’t really about catching a serial killer... Brad Pitt isn’t just killing people he’s trying to prove his view of the world is right.&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Dissected the nihilism and moral philosophy of Brad Pitt in Se7en in the middle of late-night gaming banter.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Se7en Criterion Blu-ray & Mystery Box</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The David Fincher & Brad Pitt 'Se7en' Cinema Critic', 'Alex', 'Ts is one of those movies that just stays in your head because it isn’t really about catching a serial killer... Brad Pitt isn’t just killing people he’s trying to prove his view of the world is right.')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="kidus tsa airport swab kidus sami travel hazards" data-winner="Kidus">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Travel Hazards</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🛂</span>
         </div>
 
-        <h3 class="award-name">#19 The Guaranteed Airport TSA Swab & Interrogation Target</h3>
+        <h3 class="award-name">#27 The Guaranteed Airport TSA Swab & Interrogation Target</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1533,14 +1879,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="kidus soccer lukaku tottenham kidus shane football purity" data-winner="Kidus">
+    <div class="award-card" data-tags="kidus soccer lukaku tottenham kidus shane 2026 legend" data-winner="Kidus">
       <div>
         <div class="card-top">
-          <span class="category-tag">Football Purity</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">⚽</span>
         </div>
 
-        <h3 class="award-name">#20 The 'Butt Booty Soccer' Hater of the Year</h3>
+        <h3 class="award-name">#28 The 'Butt Booty Soccer' Hater of the Year</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1576,57 +1922,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="kidus jdon girlfriend kidus jdon domestic panic" data-winner="Kidus">
+    <div class="award-card" data-tags="raj wawa lurk tbnr raj alex 2026 legend" data-winner="Raj">
       <div>
         <div class="card-top">
-          <span class="category-tag">Domestic Panic</span>
-          <span class="award-icon-badge">🚨</span>
-        </div>
-
-        <h3 class="award-name">#21 The 'Girlfriend Opening the GC' Panic Medal</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Kidus</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Jdon</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Jdon</div>
-          <div class="imessage-bubble">
-            &ldquo;😈 Kidus gf opening the gc today • wtf&rdquo;
-            <div class="tapback">‼️ Emphasized</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Triggered a groupwide code-red alert when Jdon announced Kidus's girlfriend was holding his unlocked phone while the chat was wilding.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Privacy Screen Filter with 30° Viewing Angle</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The 'Girlfriend Opening the GC' Panic Medal', 'Kidus', '😈 Kidus gf opening the gc today • wtf')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="raj wawa lurk tbnr raj alex stealth operations" data-winner="Raj">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Stealth Operations</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🥪</span>
         </div>
 
-        <h3 class="award-name">#22 The 3 AM Wawa & Master Lurker Lifetime Award</h3>
+        <h3 class="award-name">#29 The 3 AM Wawa & Master Lurker Lifetime Award</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1662,57 +1965,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="raj airport slow walk raj lucas runway strut" data-winner="Raj">
+    <div class="award-card" data-tags="dustin scooter hack dustin alex 2026 legend" data-winner="Dustin">
       <div>
         <div class="card-top">
-          <span class="category-tag">Runway Strut</span>
-          <span class="award-icon-badge">🕶️</span>
-        </div>
-
-        <h3 class="award-name">#23 The Airport Terminal Slow-Walk Menace Award</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Raj</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Lucas</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Shane</div>
-          <div class="imessage-bubble">
-            &ldquo;Bro raj i hope ur doing this on some last second 'i hope im not late' and we see u slow walk in the airport&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Casually strolling through security with iced coffee like he’s on a runway while the rest of the crew is sprinting to Gate B14.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Designer Sunglasses & 'Flight Leaves in 2 Mins' Tag</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Airport Terminal Slow-Walk Menace Award', 'Raj', 'Bro raj i hope ur doing this on some last second \'i hope im not late\' and we see u slow walk in the airport')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="dustin scooter hack dustin alex urban infiltration" data-winner="Dustin">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Urban Infiltration</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🛴</span>
         </div>
 
-        <h3 class="award-name">#24 The 'I CAN UNLOCK ANY SCOOTER' Sidewalk Menace</h3>
+        <h3 class="award-name">#30 The 'I CAN UNLOCK ANY SCOOTER' Sidewalk Menace</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1748,14 +2008,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="dustin doctor work urgent care dustin ben work evasion" data-winner="Dustin">
+    <div class="award-card" data-tags="dustin doctor work urgent care dustin ben 2026 legend" data-winner="Dustin">
       <div>
         <div class="card-top">
-          <span class="category-tag">Work Evasion</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">🏥</span>
         </div>
 
-        <h3 class="award-name">#25 The Urgent Care Doctor Excuse Mastermind</h3>
+        <h3 class="award-name">#31 The Urgent Care Doctor Excuse Mastermind</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1791,57 +2051,14 @@
     </div>
     
 
-    <div class="award-card" data-tags="dustin minecraft xbox dustin shane digital demolition" data-winner="Dustin">
+    <div class="award-card" data-tags="king vasa physics spin king vasa 2026 legend" data-winner="King">
       <div>
         <div class="card-top">
-          <span class="category-tag">Digital Demolition</span>
-          <span class="award-icon-badge">⛏️</span>
-        </div>
-
-        <h3 class="award-name">#26 The Redstone Destroyer & Minecraft Terror</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Dustin</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Sami</div>
-          <div class="imessage-bubble">
-            &ldquo;Wsg Dustin Minecraft • Bro ruined the Minecraft world&rdquo;
-            <div class="tapback">‼️ Emphasized</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Operating under xbgxboxgamer, Dustin logged into the shared Minecraft world and accidentally destroyed communal bases.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Diamond Pickaxe Replica & Cloud Backup USB</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Redstone Destroyer & Minecraft Terror', 'Dustin', 'Wsg Dustin Minecraft • Bro ruined the Minecraft world')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="king vasa physics spin king vasa theoretical physics" data-winner="King">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Theoretical Physics</span>
+          <span class="category-tag">2026 Legend</span>
           <span class="award-icon-badge">⚛️</span>
         </div>
 
-        <h3 class="award-name">#27 The Quantum 'Spin Without Spinning' Lecturer</h3>
+        <h3 class="award-name">#32 The Quantum 'Spin Without Spinning' Lecturer</h3>
 
         <div class="podium-box">
           <div class="podium-row">
@@ -1871,135 +2088,6 @@
           <span><strong>Prize:</strong> Subatomic Particle Model & Chalkboard</span>
         </div>
         <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Quantum 'Spin Without Spinning' Lecturer', 'King', 'Vasa, here is spin in 30 seconds: It’s basically a particle\'s built-in angular momentum, but nothing is actually spinning. 🌀 Think of it like mass or charge...')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="king shane gambling bankroll king shane financial risk" data-winner="King">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Financial Risk</span>
-          <span class="award-icon-badge">🛑</span>
-        </div>
-
-        <h3 class="award-name">#28 The Anti-Gambling Unit Sizing Bankroll Guardian</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">King</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Shane</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">King</div>
-          <div class="imessage-bubble">
-            &ldquo;Whoa, pump the brakes on the life savings, my friend! 🛑 Rule #1 of bankroll management: never bet more than your standard unit sizing (1u or 2u plays)...&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Intervened with bankroll sizing rules when the boys wanted to put their life savings on red in PR and 15-leg UFC parlays.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Bronze Vault Piggy Bank & Referee Whistle</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Anti-Gambling Unit Sizing Bankroll Guardian', 'King', 'Whoa, pump the brakes on the life savings, my friend! 🛑 Rule #1 of bankroll management: never bet more than your standard unit sizing (1u or 2u plays)...')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="sami lucas shane ben duos sami & lucas / shane & ben jdon & shane legendary tandems" data-winner="Sami & Lucas / Shane & Ben">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Legendary Tandems</span>
-          <span class="award-icon-badge">👯‍♂️</span>
-        </div>
-
-        <h3 class="award-name">#29 The Dynamic Duos of Chaos & Destruction</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">Sami & Lucas / Shane & Ben</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Jdon & Shane</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Group</div>
-          <div class="imessage-bubble">
-            &ldquo;Y me n lucas bouta be rizzing freshman • Yo tell me why Shane and Ben told me reload was chill&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Responsible for Virginia Beach ejections and wooden slingshot Fortnite pranks that power 90% of groupchat lore.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> Dual Championship Rings & Couples Therapy</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Dynamic Duos of Chaos & Destruction', 'Sami & Lucas / Shane & Ben', 'Y me n lucas bouta be rizzing freshman • Yo tell me why Shane and Ben told me reload was chill')">
-          <span>📲</span> Copy for iMessage
-        </button>
-      </div>
-    </div>
-    
-
-    <div class="award-card" data-tags="all kings yearbook brotherhood all 11 kings none (uncontested) supreme brotherhood" data-winner="All 11 Kings">
-      <div>
-        <div class="card-top">
-          <span class="category-tag">Supreme Brotherhood</span>
-          <span class="award-icon-badge">👑</span>
-        </div>
-
-        <h3 class="award-name">#30 The Supreme Kingdom Lifetime Achievement Award</h3>
-
-        <div class="podium-box">
-          <div class="podium-row">
-            <span class="winner-label">🏆 Winner:</span>
-            <strong style="color: #FFF; font-size: 1.05rem;">All 11 Kings</strong>
-          </div>
-          <div class="podium-row">
-            <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">None (Uncontested)</span>
-          </div>
-        </div>
-
-        <div class="imessage-wrap">
-          <div class="imessage-sender-tag">Vasa</div>
-          <div class="imessage-bubble">
-            &ldquo;Why we all have amazing lives w beautiful friends, opportunities, summer has amazing weather...&rdquo;
-            <div class="tapback">❤️ Loved</div>
-          </div>
-        </div>
-
-        <p class="incident-narrative">Generating 51,147 messages of brotherhood, roasts, trips, and memories from 2024 to 2026.</p>
-      </div>
-
-      <div>
-        <div class="prize-tag">
-          <span>🎁</span>
-          <span><strong>Prize:</strong> The Golden Groupchat Crown 👑</span>
-        </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'The Supreme Kingdom Lifetime Achievement Award', 'All 11 Kings', 'Why we all have amazing lives w beautiful friends, opportunities, summer has amazing weather...')">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
@@ -2190,7 +2278,6 @@
   </div>
 
   <script>
-    // Bulletproof lazy Web Audio
     let audioCtx = null;
     function getAudio() {
       if (!audioCtx) {
@@ -2243,7 +2330,6 @@
       } catch(e) {}
     }
 
-    // Navigation View Switcher
     function handleNavClick(viewName) {
       playPop();
       document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
@@ -2267,7 +2353,6 @@
       }
     }
 
-    // Filter Chips
     function handleChipClick(btn, filterVal) {
       playPop();
       document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
@@ -2275,7 +2360,6 @@
       filterCards();
     }
 
-    // Search and Filter Logic
     function filterCards() {
       const searchInput = document.getElementById('searchInput');
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -2303,7 +2387,6 @@
       document.getElementById('searchInput').addEventListener('input', filterCards);
     }
 
-    // Copy single card text for iMessage
     function copyCardText(btn, title, winner, quote) {
       playPop();
       const text = "👑 The Kings Superlative Award 🏆\n\nAward: " + title + "\nWinner: " + winner + "\n\nQuote: \"" + quote + "\"\n\nFull Yearbook: " + window.location.href;
@@ -2318,7 +2401,6 @@
       }
     }
 
-    // Share groupchat
     function shareGroupchat() {
       playFanfare();
       triggerParty();
@@ -2349,7 +2431,6 @@
       }
     }
 
-    // Diploma updating
     const memberDiplomas = {
       "Jdon": {
         title: "The High-Beam Vigilante & DoorDash Honor Trophy",
@@ -2361,7 +2442,7 @@
       },
       "Vasa": {
         title: "The London Tube Corporate Wolf & Wholesome Philosopher Medal",
-        body: "Awarded for retying his tie 8 times at 6 AM in London, building derivative models on the Tube, enforcing whole milk rules for Saturday movie nights, and reminding us that 'some heads have Neo, some have hummus bagels.'"
+        body: "Awarded for retying his tie 8 times at 6 AM in London, building derivative models on the Tube, clutching at Silver Diner at 3 AM, and reminding us that 'some heads have Neo, some have hummus bagels.'"
       },
       "Ben": {
         title: "The 'Sister Freak' Immunity & $15 Snack Border Patrol Award",
@@ -2377,23 +2458,23 @@
       },
       "Alex": {
         title: "The Light in Dark Times & Goblin Mode Wizardry Cup",
-        body: "Awarded for silently leaving the GC whenever it hits 500 messages, returning with 2 AM cookie dough, writing dissertations on Brad Pitt in Se7en, and proving Tuesday is a government psyop."
+        body: "Awarded for silently leaving the GC whenever it hits 500 messages, returning with 2 AM cookie dough, writing dissertations on Brad Pitt in Se7en, and being voted Most Likely to Get a Million First."
       },
       "Kidus": {
-        title: "The Guaranteed TSA Airport Swab & Anti-Butt-Booty-Soccer Medal",
-        body: "Awarded for getting pulled into secondary airport screening at every terminal, yelling at Lukaku on the TV, hating on Morocco's defensive tactics, and praying his girl doesn't check the GC."
+        title: "The Habesha Heaven & Guaranteed TSA Swab Medal",
+        body: "Awarded for being blessed for Habesha Heaven, getting pulled into secondary airport screening at every terminal, fumbling the two-man, and hating on Morocco's 'butt booty soccer.'"
       },
       "Raj": {
-        title: "The 3 AM Wawa & Master Lurker Lifetime Achievement Award",
-        body: "Awarded for absorbing 4,000 messages in total silence, dropping single-word hype bombs ('TBNR LLC', 'LLK 🦅💯'), and slow-walking through airport security with iced coffee."
+        title: "The Valentino Heist & 3 AM Wawa Lifetime Award",
+        body: "Awarded for stealing from a jobless mother of 4 to cop Valentino, absorbing 4,000 messages in total silence, dropping single-word hype bombs ('TBNR LLC', 'LLK 🦅💯'), and slow-walking through airport security."
       },
       "Dustin": {
         title: "The Universal Scooter Unlocker & Urgent Care Schemer Trophy",
         body: "Awarded for claiming root access to every Lime scooter in North America, brainstorming 3:47 AM fake doctor notes to skip work, and accidentally demolishing the shared Minecraft server."
       },
       "King": {
-        title: "The Quantum Mechanics & Unit Sizing Bankroll Guardian",
-        body: "Awarded for explaining to Vasa why particles spin without actually rotating, stopping the boys from betting life savings on red in PR, and anchoring the Kings infrastructure."
+        title: "The Quantum Mechanics & Two-Man Martyrdom Trophy",
+        body: "Awarded for tapping the grenade on the two-man so the boys could eat, explaining why particles spin without rotating, stopping life savings bets in PR, and anchoring the Kings infrastructure."
       }
     };
 
@@ -2420,7 +2501,6 @@
       }
     }
 
-    // Canvas Confetti
     function triggerParty() {
       const canvas = document.getElementById('confettiCanvas');
       if (!canvas) return;
