@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>👑 The Kings: Official Superlatives & Wrapped (2024–2026)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,9 +11,9 @@
     :root {
       --bg: #06080F;
       --bg-gradient: radial-gradient(circle at 50% 0%, #151d38 0%, #06080f 60%, #030408 100%);
-      --surface: rgba(22, 28, 48, 0.65);
+      --surface: rgba(22, 28, 48, 0.75);
       --surface-glass: rgba(255, 255, 255, 0.05);
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.12);
       --border-glow: rgba(0, 122, 255, 0.4);
       --text: #F2F4F8;
       --text-muted: #8E9BB5;
@@ -21,16 +21,20 @@
       --imessage-blue-glow: rgba(0, 122, 255, 0.45);
       --imessage-green: #34C759;
       --apple-gold: #FFD60A;
-      --apple-gold-glow: rgba(255, 214, 10, 0.35);
       --apple-purple: #AF52DE;
       --apple-cyan: #5AC8FA;
-      --radius-lg: 24px;
-      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
       --radius-sm: 10px;
       --shadow-glass: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
     
     body {
       background: var(--bg);
@@ -41,72 +45,76 @@
       line-height: 1.5;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-bottom: 5rem;
+      padding-bottom: 6rem;
+      -webkit-font-smoothing: antialiased;
     }
 
     .ambient-glow {
       position: fixed;
-      width: 500px;
-      height: 500px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-      filter: blur(140px);
-      opacity: 0.14;
+      filter: blur(120px);
+      opacity: 0.12;
       pointer-events: none;
       z-index: 0;
     }
-    .glow-1 { top: -100px; left: 10%; background: var(--imessage-blue); }
-    .glow-2 { top: 40%; right: -150px; background: var(--apple-purple); }
-    .glow-3 { bottom: 10%; left: -100px; background: var(--apple-gold); }
+    .glow-1 { top: -80px; left: 10%; background: var(--imessage-blue); }
+    .glow-2 { top: 45%; right: -100px; background: var(--apple-purple); }
+    .glow-3 { bottom: 10%; left: -80px; background: var(--apple-gold); }
 
+    /* Top Sticky App Bar */
     nav.app-bar {
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      background: rgba(6, 8, 15, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      background: rgba(6, 8, 15, 0.88);
       border-bottom: 1px solid var(--border);
-      padding: 0.85rem 1.25rem;
+      padding: 0.75rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       letter-spacing: -0.02em;
       white-space: nowrap;
     }
-    .crown-icon {
-      font-size: 1.3rem;
-    }
+    .crown-icon { font-size: 1.25rem; }
 
     .nav-tabs {
       display: flex;
-      gap: 0.35rem;
-      background: rgba(255, 255, 255, 0.06);
+      gap: 0.25rem;
+      background: rgba(255, 255, 255, 0.08);
       padding: 0.25rem;
       border-radius: 999px;
       border: 1px solid var(--border);
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .nav-tab-btn {
       background: transparent;
       border: none;
       color: var(--text-muted);
       font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.5rem 1.1rem;
+      font-size: 0.82rem;
+      padding: 0.5rem 0.95rem;
       border-radius: 999px;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.2s ease;
       touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .nav-tab-btn:active, .nav-tab-btn.active {
       background: var(--imessage-blue);
@@ -116,15 +124,16 @@
 
     .main-wrapper {
       position: relative;
-      z-index: 1;
-      max-width: 1300px;
+      z-index: 2;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 1.5rem 1.25rem;
+      padding: 1.25rem 1rem;
     }
 
+    /* Hero */
     .hero {
       text-align: center;
-      padding: 1.5rem 0.5rem 2.5rem;
+      padding: 1.25rem 0.5rem 2rem;
     }
     .hero-badge {
       display: inline-flex;
@@ -133,13 +142,13 @@
       background: rgba(0, 122, 255, 0.14);
       border: 1px solid rgba(0, 122, 255, 0.35);
       color: var(--apple-cyan);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
     .pulse-dot {
       width: 7px;
@@ -155,89 +164,98 @@
     }
 
     h1.hero-title {
-      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-size: clamp(1.85rem, 5.5vw, 3.2rem);
       font-weight: 800;
       letter-spacing: -0.035em;
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
       background: linear-gradient(180deg, #FFFFFF 30%, #A2B4D6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     p.hero-desc {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 2rem;
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
       font-weight: 400;
+      line-height: 1.45;
     }
 
+    /* Stats bar */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 600px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
     .stat-card {
       background: var(--surface-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 1rem 0.75rem;
+      padding: 0.85rem 0.5rem;
       text-align: center;
     }
     .stat-num {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.1rem;
       background: linear-gradient(135deg, #FFF, var(--apple-cyan));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .stat-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
+    /* Controls */
     .controls-panel {
       background: var(--surface);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      margin-bottom: 2rem;
+      padding: 1.1rem;
+      margin-bottom: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
       box-shadow: var(--shadow-glass);
     }
 
     .search-row {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
     }
     .search-input-wrap {
       flex: 1;
-      min-width: 240px;
+      min-width: 200px;
       position: relative;
     }
     .search-input-wrap input {
       width: 100%;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.5);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.85rem 1rem 0.85rem 2.6rem;
+      padding: 0.75rem 0.9rem 0.75rem 2.4rem;
       color: #fff;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       outline: none;
-      transition: all 0.2s;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
     }
     .search-input-wrap input:focus {
       border-color: var(--imessage-blue);
@@ -245,38 +263,40 @@
     }
     .search-icon {
       position: absolute;
-      left: 0.9rem;
+      left: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       pointer-events: none;
     }
 
     .member-chips {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.45rem;
       overflow-x: auto;
-      padding-bottom: 0.4rem;
+      padding-bottom: 0.35rem;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
     .member-chips::-webkit-scrollbar { display: none; }
 
     .chip-btn {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      padding: 0.55rem 1.1rem;
+      padding: 0.5rem 0.95rem;
       border-radius: 999px;
       cursor: pointer;
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       transition: all 0.2s;
       touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .chip-btn:active, .chip-btn.active {
       background: var(--imessage-blue);
@@ -285,35 +305,40 @@
       box-shadow: 0 4px 15px var(--imessage-blue-glow);
     }
 
+    /* Grid */
     .awards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
     }
-
-    @media (max-width: 480px) {
+    @media (min-width: 680px) {
       .awards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1040px) {
+      .awards-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     .award-card {
       background: var(--surface);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.4rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-glass);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
     .award-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: rgba(0, 122, 255, 0.45);
     }
 
@@ -321,140 +346,142 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
     .category-tag {
       font-family: "JetBrains Mono", monospace;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       color: var(--apple-cyan);
       background: rgba(90, 200, 250, 0.12);
-      padding: 0.25rem 0.65rem;
+      padding: 0.25rem 0.55rem;
       border-radius: 6px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
-    .award-icon-badge {
-      font-size: 1.3rem;
-    }
+    .award-icon-badge { font-size: 1.25rem; }
 
     h3.award-name {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #FFFFFF;
       letter-spacing: -0.02em;
       line-height: 1.3;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
     .podium-box {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 0.85rem 1rem;
-      margin-bottom: 1.15rem;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
+      gap: 0.35rem;
     }
     .podium-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .winner-label {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       font-weight: 800;
       color: var(--apple-gold);
     }
     .runner-label {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
+      gap: 0.35rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
     .imessage-wrap {
-      margin-bottom: 1.15rem;
+      margin-bottom: 1rem;
       position: relative;
     }
     .imessage-sender-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      margin-bottom: 0.25rem;
-      margin-left: 0.4rem;
+      margin-bottom: 0.2rem;
+      margin-left: 0.35rem;
       font-weight: 600;
     }
     .imessage-bubble {
       background: #1C2235;
       color: #E2E8F0;
-      border-radius: 18px;
-      padding: 0.8rem 1rem;
-      font-size: 0.9rem;
+      border-radius: 16px;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.88rem;
       position: relative;
       border-bottom-left-radius: 4px;
-      line-height: 1.45;
+      line-height: 1.4;
+      word-break: break-word;
     }
     
     .tapback {
       position: absolute;
-      top: -10px;
-      right: -6px;
+      top: -9px;
+      right: -5px;
       background: #2B334B;
       border: 2px solid var(--bg);
       border-radius: 999px;
-      padding: 0.2rem 0.55rem;
+      padding: 0.15rem 0.5rem;
       display: flex;
       align-items: center;
-      gap: 0.25rem;
-      font-size: 0.75rem;
+      gap: 0.2rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #FFF;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .incident-narrative {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: #B4BFD6;
-      line-height: 1.5;
-      margin-bottom: 1.15rem;
+      line-height: 1.45;
+      margin-bottom: 1rem;
     }
 
     .prize-tag {
       background: rgba(52, 199, 89, 0.12);
       border: 1px solid rgba(52, 199, 89, 0.25);
-      padding: 0.6rem 0.8rem;
+      padding: 0.55rem 0.75rem;
       border-radius: var(--radius-sm);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: #6EE7B7;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       font-weight: 500;
       margin-bottom: 0.75rem;
+      word-break: break-word;
     }
 
     .btn-copy-card {
       width: 100%;
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 0.65rem 1rem;
+      padding: 0.65rem 0.85rem;
       border-radius: var(--radius-sm);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
+      gap: 0.45rem;
+      transition: all 0.15s ease;
       touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .btn-copy-card:active {
       background: var(--imessage-blue);
@@ -464,58 +491,59 @@
     .view-section { display: none; }
     .view-section.active { display: block; }
 
+    /* Diploma */
     .cert-container {
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
       background: linear-gradient(145deg, #1A2238 0%, #0D1220 100%);
       border: 2px solid var(--apple-gold);
       border-radius: var(--radius-lg);
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1.25rem;
       text-align: center;
       position: relative;
-      box-shadow: 0 0 50px rgba(255, 214, 10, 0.2), var(--shadow-glass);
+      box-shadow: 0 0 45px rgba(255, 214, 10, 0.18), var(--shadow-glass);
       overflow: hidden;
     }
-    .cert-crown { font-size: 3rem; margin-bottom: 0.4rem; }
+    .cert-crown { font-size: 2.8rem; margin-bottom: 0.3rem; }
     .cert-header {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-family: "JetBrains Mono", monospace;
       color: var(--apple-gold);
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .cert-title {
-      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-size: clamp(1.3rem, 3.8vw, 1.85rem);
       font-weight: 800;
       color: #FFFFFF;
-      margin-bottom: 0.6rem;
-      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
     }
     .cert-recipient {
-      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-size: clamp(1.85rem, 5.5vw, 2.5rem);
       font-weight: 900;
       background: linear-gradient(135deg, #FFD60A, #FFAA00);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
     .cert-body {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: #D1D8E8;
-      max-width: 580px;
-      margin: 0 auto 1.75rem;
-      line-height: 1.6;
+      max-width: 540px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.55;
     }
     .cert-seal {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       border: 1px solid var(--apple-gold);
-      padding: 0.45rem 1.1rem;
+      padding: 0.4rem 1rem;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--apple-gold);
       font-family: "JetBrains Mono", monospace;
     }
@@ -524,47 +552,56 @@
       background: var(--imessage-blue);
       color: #fff;
       border: none;
-      padding: 0.85rem 1.6rem;
-      font-size: 0.95rem;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.9rem;
       font-weight: 700;
       border-radius: 999px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 20px var(--imessage-blue-glow);
+      gap: 0.45rem;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 18px var(--imessage-blue-glow);
       touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .btn-action:active {
       transform: scale(0.97);
     }
 
+    /* Leaderboard */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
     .leaderboard-table {
       width: 100%;
+      min-width: 480px;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
     .leaderboard-table th, .leaderboard-table td {
-      padding: 0.85rem 1rem;
+      padding: 0.75rem 0.85rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
     .leaderboard-table th {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
       font-family: "JetBrains Mono", monospace;
     }
-    .rank-cell { font-weight: 800; font-size: 1rem; }
+    .rank-cell { font-weight: 800; font-size: 0.95rem; }
     .bar-wrap {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 999px;
-      height: 7px;
+      height: 6px;
       overflow: hidden;
-      margin-top: 0.35rem;
+      margin-top: 0.3rem;
     }
     .bar-fill {
       height: 100%;
@@ -572,24 +609,25 @@
       background: linear-gradient(90deg, var(--imessage-blue), var(--apple-cyan));
     }
 
+    /* Toast */
     #toast {
       position: fixed;
       bottom: 2rem;
       left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: rgba(18, 24, 42, 0.96);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      transform: translateX(-50%) translateY(120px);
+      background: rgba(18, 24, 42, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--imessage-blue);
       color: #fff;
-      padding: 0.85rem 1.6rem;
+      padding: 0.75rem 1.4rem;
       border-radius: 999px;
       font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.8), 0 0 25px var(--imessage-blue-glow);
+      font-size: 0.88rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--imessage-blue-glow);
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 100000;
       white-space: nowrap;
@@ -618,7 +656,7 @@
       <span>THE KINGS</span>
     </div>
     <div class="nav-tabs">
-      <button type="button" class="nav-tab-btn active" id="tabAwardsBtn" onclick="handleNavClick('awards')">🏆 Awards (30)</button>
+      <button type="button" class="nav-tab-btn active" id="tabAwardsBtn" onclick="handleNavClick('awards')">🏆 Awards</button>
       <button type="button" class="nav-tab-btn" id="tabWrappedBtn" onclick="handleNavClick('wrapped')">📊 Wrapped</button>
       <button type="button" class="nav-tab-btn" id="tabDiplomaBtn" onclick="handleNavClick('diploma')">📜 Diploma</button>
     </div>
@@ -633,7 +671,7 @@
           Official 2024–2026 Archive Edition
         </div>
         <h1 class="hero-title">The Kings Superlatives</h1>
-        <p class="hero-desc">From the original October 2024 nominations to the 2026 summer road trips, $2,000 DoorDash arcs, Manny's Five Guys lore, and two-man pursuits across 51,147 iMessages.</p>
+        <p class="hero-desc">From October 2024 nominations to the 2026 summer trips, $2,000 DoorDash arcs, Manny's Five Guys lore, and two-man pursuits across 51,147 iMessages.</p>
       </div>
 
       <div class="stats-grid">
@@ -659,35 +697,35 @@
         <div class="search-row">
           <div class="search-input-wrap">
             <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" placeholder="Search by name, quote, inside joke, or keyword...">
+            <input type="text" id="searchInput" placeholder="Search by name, quote, joke...">
           </div>
           <button type="button" class="btn-action" id="shareGcBtn" onclick="shareGroupchat()">
-            <span>📲</span> Share to Groupchat
+            <span>📲</span> Share to GC
           </button>
         </div>
 
         <div class="member-chips" id="memberChips">
           <button type="button" class="chip-btn active" data-filter="all" onclick="handleChipClick(this, 'all')">All Kings (30)</button>
-          <button type="button" class="chip-btn" data-filter="Two-Man & Rizz" onclick="handleChipClick(this, 'Two-Man & Rizz')">❤️ Two-Man & Rizz</button>
-          <button type="button" class="chip-btn" data-filter="Whips & Crime" onclick="handleChipClick(this, 'Whips & Crime')">🚗 Whips & Crime</button>
-          <button type="button" class="chip-btn" data-filter="Food & Street" onclick="handleChipClick(this, 'Food & Street')">🍔 Food & Street</button>
-          <button type="button" class="chip-btn" data-filter="Manny" onclick="handleChipClick(this, 'Manny')">🛴 Manny</button>
-          <button type="button" class="chip-btn" data-filter="Jdon" onclick="handleChipClick(this, 'Jdon')">🚗 Jdon</button>
-          <button type="button" class="chip-btn" data-filter="Sami" onclick="handleChipClick(this, 'Sami')">⚡ Sami</button>
-          <button type="button" class="chip-btn" data-filter="Vasa" onclick="handleChipClick(this, 'Vasa')">👔 Vasa</button>
-          <button type="button" class="chip-btn" data-filter="Ben" onclick="handleChipClick(this, 'Ben')">🍪 Ben</button>
-          <button type="button" class="chip-btn" data-filter="Shane" onclick="handleChipClick(this, 'Shane')">📊 Shane</button>
-          <button type="button" class="chip-btn" data-filter="Lucas" onclick="handleChipClick(this, 'Lucas')">🏃 Lucas</button>
-          <button type="button" class="chip-btn" data-filter="Alex" onclick="handleChipClick(this, 'Alex')">💡 Alex Wang</button>
-          <button type="button" class="chip-btn" data-filter="Kidus" onclick="handleChipClick(this, 'Kidus')">⚽ Kidus</button>
-          <button type="button" class="chip-btn" data-filter="Raj" onclick="handleChipClick(this, 'Raj')">🥪 Raj</button>
-          <button type="button" class="chip-btn" data-filter="King" onclick="handleChipClick(this, 'King')">👑 King</button>
+          <button type="button" class="chip-btn" data-filter="two-man" onclick="handleChipClick(this, 'two-man')">❤️ Two-Man & Rizz</button>
+          <button type="button" class="chip-btn" data-filter="whips" onclick="handleChipClick(this, 'whips')">🚗 Whips & Crime</button>
+          <button type="button" class="chip-btn" data-filter="food" onclick="handleChipClick(this, 'food')">🍔 Food & Street</button>
+          <button type="button" class="chip-btn" data-filter="manny" onclick="handleChipClick(this, 'manny')">🛴 Manny</button>
+          <button type="button" class="chip-btn" data-filter="jdon" onclick="handleChipClick(this, 'jdon')">🚗 Jdon</button>
+          <button type="button" class="chip-btn" data-filter="sami" onclick="handleChipClick(this, 'sami')">⚡ Sami</button>
+          <button type="button" class="chip-btn" data-filter="vasa" onclick="handleChipClick(this, 'vasa')">👔 Vasa</button>
+          <button type="button" class="chip-btn" data-filter="ben" onclick="handleChipClick(this, 'ben')">🍪 Ben</button>
+          <button type="button" class="chip-btn" data-filter="shane" onclick="handleChipClick(this, 'shane')">📊 Shane</button>
+          <button type="button" class="chip-btn" data-filter="lucas" onclick="handleChipClick(this, 'lucas')">🏃 Lucas</button>
+          <button type="button" class="chip-btn" data-filter="alex" onclick="handleChipClick(this, 'alex')">💡 Alex Wang</button>
+          <button type="button" class="chip-btn" data-filter="kidus" onclick="handleChipClick(this, 'kidus')">⚽ Kidus</button>
+          <button type="button" class="chip-btn" data-filter="raj" onclick="handleChipClick(this, 'raj')">🥪 Raj</button>
+          <button type="button" class="chip-btn" data-filter="king" onclick="handleChipClick(this, 'king')">👑 King</button>
         </div>
       </div>
 
       <div class="awards-grid" id="awardsGrid">
 
-    <div class="award-card" data-tags="king jdon two-man rizz king (host) jdon two-man & rizz" data-winner="King (Host)">
+    <div class="award-card" data-tags="king jdon two-man and rizz king (host) jdon two-man and rizz" data-winner="king (host)">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -723,14 +761,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Purple Heart of Groupchat Martyrdom & Wingman Crown</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Tap the Fat Bitch on the Two-Man', 'King (Host)', 'Most likely to tap the fat bitch on the two man')">
+        <button type="button" class="btn-copy-card" data-award-id="1" onclick="copyAwardById(1)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="kidus lucas two-man fumble kidus lucas two-man & rizz" data-winner="Kidus">
+    <div class="award-card" data-tags="kidus lucas two-man and rizz kidus lucas two-man and rizz" data-winner="kidus">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -766,14 +804,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Emergency Wingman Playbook & Panic Button</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Fumble the Two-Man', 'Kidus', 'Most likely to fumble the two man')">
+        <button type="button" class="btn-copy-card" data-award-id="2" onclick="copyAwardById(2)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa shane crashout vasa shane two-man & rizz" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa shane two-man and rizz vasa shane two-man and rizz" data-winner="vasa">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -809,14 +847,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> One-Way Flight to Da Nang & Vietnamese Phrasebook</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Settle in Vietnam and Marry a Drone with Fake Tits', 'Vasa', 'Most likely to struggle to find a job and wife and then get angry with America and white women and settle in Vietnam and marry some brainless viet drone with fake tits')">
+        <button type="button" class="btn-copy-card" data-award-id="3" onclick="copyAwardById(3)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="ben vasa shane sister freak ben shane two-man & rizz" data-winner="Ben">
+    <div class="award-card" data-tags="ben vasa shane two-man and rizz ben shane two-man and rizz" data-winner="ben">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -852,14 +890,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Giant Teddy Bear in a 'Sensitive Topic' Tee</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to be Called a 'Sister Freak' and Hide Behind Bear Eyes', 'Ben', 'Ben is a sister freak • Ben’s cute bear eyes convinced leyna he was nice • sensitive topic')">
+        <button type="button" class="btn-copy-card" data-award-id="4" onclick="copyAwardById(4)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="lucas sami va beach lucas sami two-man & rizz" data-winner="Lucas">
+    <div class="award-card" data-tags="lucas sami two-man and rizz lucas sami two-man and rizz" data-winner="lucas">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -895,14 +933,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Inflatable Twin Air Mattress & 20,000mAh Power Bank</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Travel to VA Beach to Rizz Freshmen and End Up on a 6-Man Floor', 'Lucas', 'couldn’t find lucas or sami for half of it... got kicked out the club and then yelled at for standing on the sidewalk. phone was dead during all of that aswell')">
+        <button type="button" class="btn-copy-card" data-award-id="5" onclick="copyAwardById(5)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="lucas sami self report lucas sami two-man & rizz" data-winner="Lucas">
+    <div class="award-card" data-tags="lucas sami two-man and rizz lucas sami two-man and rizz" data-winner="lucas">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -938,14 +976,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Microfiber Swim Trunks & Alibi Generator</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Go Skinny Dipping while in a Relationship', 'Lucas', 'Most likely to go skinny dipping with another girl while in a relationship')">
+        <button type="button" class="btn-copy-card" data-award-id="6" onclick="copyAwardById(6)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="kidus jdon girlfriend kidus jdon two-man & rizz" data-winner="Kidus">
+    <div class="award-card" data-tags="kidus jdon two-man and rizz kidus jdon two-man and rizz" data-winner="kidus">
       <div>
         <div class="card-top">
           <span class="category-tag">Two-Man & Rizz</span>
@@ -981,14 +1019,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Privacy Screen Filter with 30° Anti-Peep Shield</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to have his Girl Open the GC at the Worst Possible Second', 'Kidus', '😈 Kidus gf opening the gc today • wtf')">
+        <button type="button" class="btn-copy-card" data-award-id="7" onclick="copyAwardById(7)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="jdon lucas sami shane mazda jdon lucas whips & crime" data-winner="Jdon">
+    <div class="award-card" data-tags="jdon lucas sami shane whips and crime jdon lucas whips and crime" data-winner="jdon">
       <div>
         <div class="card-top">
           <span class="category-tag">Whips & Crime</span>
@@ -1024,14 +1062,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> 50,000-Lumen Tactical LED Spotlight & Badge</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Snipe a Car Thief on High Beams and Chase Him Down', 'Jdon', 'jadon SNIPES the thief actively breaking into the car so he reverses shines his high beams and honks at him... i thought they were holding the dude hostage so i sprint up the street.')">
+        <button type="button" class="btn-copy-card" data-award-id="8" onclick="copyAwardById(8)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="jdon doordash pr honor jdon shane whips & crime" data-winner="Jdon">
+    <div class="award-card" data-tags="jdon shane whips and crime jdon shane whips and crime" data-winner="jdon">
       <div>
         <div class="card-top">
           <span class="category-tag">Whips & Crime</span>
@@ -1067,14 +1105,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Platinum Rhinestone DoorDash Delivery Bag</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to DoorDash Brick-by-Brick to Repay $2,000 on His Honor', 'Jdon', 'I got scammed out of 2K in pr and barely got it back... I door dashed hella brick by brick to keep my word and used my own money cuz I gave u guys my promise id make those fakes come.')">
+        <button type="button" class="btn-copy-card" data-award-id="9" onclick="copyAwardById(9)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="jdon shane whips jdon shane whips & crime" data-winner="Jdon">
+    <div class="award-card" data-tags="jdon shane whips and crime jdon shane whips and crime" data-winner="jdon">
       <div>
         <div class="card-top">
           <span class="category-tag">Whips & Crime</span>
@@ -1110,14 +1148,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Initial D Racing Gloves & Roll Cage Voucher</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Touge Off a Cliff', 'Jdon', 'Most likely to togue off a cliff')">
+        <button type="button" class="btn-copy-card" data-award-id="10" onclick="copyAwardById(10)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="manny scooter hack manny alex whips & crime" data-winner="Manny">
+    <div class="award-card" data-tags="manny alex wang whips and crime manny alex wang whips and crime" data-winner="manny">
       <div>
         <div class="card-top">
           <span class="category-tag">Whips & Crime</span>
@@ -1133,7 +1171,7 @@
           </div>
           <div class="podium-row">
             <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex Wang</span>
           </div>
         </div>
 
@@ -1153,14 +1191,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Lime Scooter Handlebar & Master Allen Key Set</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Unlock Any Lime or Bird Scooter on the Sidewalk', 'Manny', 'I CAN ONLICK ANY SCOOTER • Tots scooter got unlimited tint')">
+        <button type="button" class="btn-copy-card" data-award-id="11" onclick="copyAwardById(11)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="shane lucas ben stan shane lucas whips & crime" data-winner="Shane">
+    <div class="award-card" data-tags="shane lucas ben whips and crime shane lucas whips and crime" data-winner="shane">
       <div>
         <div class="card-top">
           <span class="category-tag">Whips & Crime</span>
@@ -1183,7 +1221,7 @@
         <div class="imessage-wrap">
           <div class="imessage-sender-tag">Shane</div>
           <div class="imessage-bubble">
-            &ldquo;-> pre game practice -> drunk practice -> pregame dc -> blackout in dc -> fuck a hooker -> kill the hooker -> play the song “stan” with the dead hooker in your trunk -> drive off the bay bridge&rdquo;
+            &ldquo;-&gt; pre game practice -&gt; drunk practice -&gt; pregame dc -&gt; blackout in dc -&gt; fuck a hooker -&gt; kill the hooker -&gt; play the song “stan” with the dead hooker in your trunk -&gt; drive off the bay bridge&rdquo;
             <div class="tapback">❤️ Loved</div>
           </div>
         </div>
@@ -1196,14 +1234,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> The Marshall Mathers LP Cassette Tape</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Draft a 7-Step Plan Involving Eminem's 'Stan' and the Bay Bridge', 'Shane', '-> pre game practice -> drunk practice -> pregame dc -> blackout in dc -> fuck a hooker -> kill the hooker -> play the song “stan” with the dead hooker in your trunk -> drive off the bay bridge')">
+        <button type="button" class="btn-copy-card" data-award-id="12" onclick="copyAwardById(12)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="shane parlay world cup var shane sami degenerate parlays" data-winner="Shane">
+    <div class="award-card" data-tags="shane sami degenerate parlays shane sami degenerate parlays" data-winner="shane">
       <div>
         <div class="card-top">
           <span class="category-tag">Degenerate Parlays</span>
@@ -1239,14 +1277,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Framed Yellow Card & Official FIFA Rulebook</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Lose a $300 Parlay to a 95th-Min Goalie Offside VAR Rule', 'Shane', 'Iran\'s stoppage-time goal against Egypt in the 2026 FIFA World Cup was ruled offside by VAR because the Egyptian goalkeeper had advanced up the field... So this is why I didn’t win 300$ lol')">
+        <button type="button" class="btn-copy-card" data-award-id="13" onclick="copyAwardById(13)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="king shane gambling bankroll king (host) shane degenerate parlays" data-winner="King (Host)">
+    <div class="award-card" data-tags="king shane degenerate parlays king (host) shane degenerate parlays" data-winner="king (host)">
       <div>
         <div class="card-top">
           <span class="category-tag">Degenerate Parlays</span>
@@ -1282,14 +1320,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Bronze Piggy Bank & Bankroll Timeout Whistle</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Tell the Boys to Stop Gambling Their Life Savings on UFC Dogs', 'King (Host)', 'Whoa, pump the brakes on the life savings, my friend! 🛑 Rule #1 of bankroll management: never bet more than your standard unit sizing (1u or 2u plays)...')">
+        <button type="button" class="btn-copy-card" data-award-id="14" onclick="copyAwardById(14)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="kidus soccer lukaku tottenham kidus shane degenerate parlays" data-winner="Kidus">
+    <div class="award-card" data-tags="kidus shane degenerate parlays kidus shane degenerate parlays" data-winner="kidus">
       <div>
         <div class="card-top">
           <span class="category-tag">Degenerate Parlays</span>
@@ -1325,17 +1363,17 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Tottenham Hotspur Scarf & Lukaku Belgium Jersey</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Hate on Morocco's 'Butt Booty Soccer'', 'Kidus', 'Gen tho y would u want morocco to win when u could watch france play some real soccer instead of moroccos butt booty soccer')">
+        <button type="button" class="btn-copy-card" data-award-id="15" onclick="copyAwardById(15)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa london tube finance vasa ben corporate & grind" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa ben corporate and work vasa ben corporate and work" data-winner="vasa">
       <div>
         <div class="card-top">
-          <span class="category-tag">Corporate & Grind</span>
+          <span class="category-tag">Corporate & Work</span>
           <span class="award-icon-badge">👔</span>
         </div>
 
@@ -1368,17 +1406,17 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Pre-Tied Silk Clip-On Tie & London Oyster Pass</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Retie His Tie 8 Times on the London Tube at 6 AM', 'Vasa', 'Wake up at 6am pull myself out of bed retie my tie 8 times get on the tube get in around 7/7:30ish. check emails teams then check in w my boss do some pricing models...')">
+        <button type="button" class="btn-copy-card" data-award-id="16" onclick="copyAwardById(16)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="manny doctor work urgent care manny ben corporate & grind" data-winner="Manny">
+    <div class="award-card" data-tags="manny ben corporate and work manny ben corporate and work" data-winner="manny">
       <div>
         <div class="card-top">
-          <span class="category-tag">Corporate & Grind</span>
+          <span class="category-tag">Corporate & Work</span>
           <span class="award-icon-badge">🏥</span>
         </div>
 
@@ -1411,17 +1449,17 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Fake Prescription Pad Stamped by 'Dr. Groupchat'</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Workshop a Fake Doctor Note at 3:47 AM to Skip Work', 'Manny', 'So yall think saying I have a doctor apt is better than saying I have to take someoen to urgent care tmr unexpectedly or saying the airport shi?')">
+        <button type="button" class="btn-copy-card" data-award-id="17" onclick="copyAwardById(17)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="alex king money alex wang king corporate & grind" data-winner="Alex Wang">
+    <div class="award-card" data-tags="alex wang king corporate and work alex wang king corporate and work" data-winner="alex wang">
       <div>
         <div class="card-top">
-          <span class="category-tag">Corporate & Grind</span>
+          <span class="category-tag">Corporate & Work</span>
           <span class="award-icon-badge">💰</span>
         </div>
 
@@ -1454,17 +1492,17 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Commemorative $1,000,000 Bill & Seed Check</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Get a Million First', 'Alex Wang', 'Most likely to get a million first')">
+        <button type="button" class="btn-copy-card" data-award-id="18" onclick="copyAwardById(18)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="raj shane valentino raj shane corporate & grind" data-winner="Raj">
+    <div class="award-card" data-tags="raj shane corporate and work raj shane corporate and work" data-winner="raj">
       <div>
         <div class="card-top">
-          <span class="category-tag">Corporate & Grind</span>
+          <span class="category-tag">Corporate & Work</span>
           <span class="award-icon-badge">👟</span>
         </div>
 
@@ -1497,14 +1535,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Valentino Rockstud Sneaker Box & Moral Compass</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Steal from a Jobless Mother of 4 to Cop Valentino', 'Raj', 'Most likely to steal from a jobless mother of 4 to cop some valentino')">
+        <button type="button" class="btn-copy-card" data-award-id="19" onclick="copyAwardById(19)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa sami silver diner vasa sami food & street" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa sami food and street vasa sami food and street" data-winner="vasa">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1540,14 +1578,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Unlimited Lumberjack Breakfast Pass</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Clutch for the Boys at Silver Diner at 3 AM', 'Vasa', 'Most likely to clutch for the boys at silver diner')">
+        <button type="button" class="btn-copy-card" data-award-id="20" onclick="copyAwardById(20)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="manny five guys vasa manny shane food & street" data-winner="Manny">
+    <div class="award-card" data-tags="manny shane food and street manny shane food and street" data-winner="manny">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1583,14 +1621,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Cajun Fries for Life & Five Guys Paper Hat</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Have a Viral Video at Five Guys', 'Manny', 'The manny video at five guys is the funniest thing ever')">
+        <button type="button" class="btn-copy-card" data-award-id="21" onclick="copyAwardById(21)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="shane mcdonalds nuggets math shane vasa food & street" data-winner="Shane">
+    <div class="award-card" data-tags="shane vasa food and street shane vasa food and street" data-winner="shane">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1613,12 +1651,7 @@
         <div class="imessage-wrap">
           <div class="imessage-sender-tag">Shane</div>
           <div class="imessage-bubble">
-            &ldquo;1.25 shared nuggets 
-1.64 shared fries 
-1.90 shared fees 
-+ 1.83 if u got apple pie 
-+3.44 if you got a mcurry 
-+5.39 if u got a big mac&rdquo;
+            &ldquo;1.25 shared nuggets <br>1.64 shared fries <br>1.90 shared fees <br>+ 1.83 if u got apple pie <br>+3.44 if you got a mcurry <br>+5.39 if u got a big mac&rdquo;
             <div class="tapback">❤️ Loved</div>
           </div>
         </div>
@@ -1631,19 +1664,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Solar-Powered Texas Instruments Calculator</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Itemize McDonald's Down to $1.25 Shared Nuggets and $1.90 Fees', 'Shane', '1.25 shared nuggets 
-1.64 shared fries 
-1.90 shared fees 
-+ 1.83 if u got apple pie 
-+3.44 if you got a mcurry 
-+5.39 if u got a big mac')">
+        <button type="button" class="btn-copy-card" data-award-id="22" onclick="copyAwardById(22)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="ben alex cookies tariffs ben alex food & street" data-winner="Ben">
+    <div class="award-card" data-tags="ben alex wang food and street ben alex wang food and street" data-winner="ben">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1659,7 +1687,7 @@
           </div>
           <div class="podium-row">
             <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex Wang</span>
           </div>
         </div>
 
@@ -1679,14 +1707,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Biometric Locked Snack Jar & Card Terminal</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Charge $15 Venmo Fines for Stolen Cookies', 'Ben', 'if i see ur grubby finger touch a cookie or chips it’s $15 straight to alex')">
+        <button type="button" class="btn-copy-card" data-award-id="23" onclick="copyAwardById(23)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa philosophy neo bagel vasa shane food & street" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa shane food and street vasa shane food and street" data-winner="vasa">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1722,14 +1750,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Toasted Everything Bagel with Roasted Garlic Hummus</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Give a 2 AM Speech About How 'Some Heads Have Hummus Bagels'', 'Vasa', 'Why we all have amazing lives w beautiful friends, opportunities, summer has amazing weather, we all fit, not virgins, all have tuff style, tuff movies to watch, great childhood, some heads have cats, some have Neo, some have hummus bagels')">
+        <button type="button" class="btn-copy-card" data-award-id="24" onclick="copyAwardById(24)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="vasa alex lucas movie milk vasa alex food & street" data-winner="Vasa">
+    <div class="award-card" data-tags="vasa alex wang food and street vasa alex wang food and street" data-winner="vasa">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1745,7 +1773,7 @@
           </div>
           <div class="podium-row">
             <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex Wang</span>
           </div>
         </div>
 
@@ -1765,14 +1793,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> 5-Gallon Dairy Milk Jug & Ballot Box</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Demand a Coordinated Gallon of Whole Milk for Movie Night', 'Vasa', 'Alex Sami Lucas Kidus Shane Ben Raj and everyone I’m hosting a movie night at my house on Saturday at 8pm. Cookies will be provided, please coordinate a gallon of milk.')">
+        <button type="button" class="btn-copy-card" data-award-id="25" onclick="copyAwardById(25)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="raj wawa lurk tbnr raj alex food & street" data-winner="Raj">
+    <div class="award-card" data-tags="raj alex wang food and street raj alex wang food and street" data-winner="raj">
       <div>
         <div class="card-top">
           <span class="category-tag">Food & Street</span>
@@ -1788,7 +1816,7 @@
           </div>
           <div class="podium-row">
             <span class="runner-label">🥈 Runner-Up:</span>
-            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex</span>
+            <span style="color: var(--text-muted); font-size: 0.88rem;">Alex Wang</span>
           </div>
         </div>
 
@@ -1808,14 +1836,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> $100 Wawa Hoagie Gift Card & Night Vision Goggles</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Lurk for 3 Weeks and Drop 'WAWA 🤤🤤🤤'', 'Raj', 'WAWA 🤤🤤🤤 • TBNR LLC • LLK 🦅💯 • Y raj lurking hard rn')">
+        <button type="button" class="btn-copy-card" data-award-id="26" onclick="copyAwardById(26)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="sami hype fortnite slingshot sami jdon gc brainrot" data-winner="Sami">
+    <div class="award-card" data-tags="sami jdon gc brainrot sami jdon gc brainrot" data-winner="sami">
       <div>
         <div class="card-top">
           <span class="category-tag">GC Brainrot</span>
@@ -1851,14 +1879,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Cherry MX Red Mechanical Keyboard & Wooden Slingshot</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Type 13,000 Messages and Drop with a Slingshot in Fortnite', 'Sami', 'BRUH LETS RUN PR IM FUCKING READY • Yo tell me why Shane and Ben told me reload was chill and my first weapons proceeded to be a fucking slingshot')">
+        <button type="button" class="btn-copy-card" data-award-id="27" onclick="copyAwardById(27)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="kidus tsa airport swab kidus sami gc brainrot" data-winner="Kidus">
+    <div class="award-card" data-tags="kidus sami gc brainrot kidus sami gc brainrot" data-winner="kidus">
       <div>
         <div class="card-top">
           <span class="category-tag">GC Brainrot</span>
@@ -1894,14 +1922,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> TSA PreCheck Voucher & Sterile Cotton Swabs</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to be Pulled for Secondary TSA Swabbing at Every Airport', 'Kidus', 'Ik kidus getting stopped in TSA though • bros getting swabbed ASAP')">
+        <button type="button" class="btn-copy-card" data-award-id="28" onclick="copyAwardById(28)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="alex ghost goblin mode ai alex wang raj gc brainrot" data-winner="Alex Wang">
+    <div class="award-card" data-tags="alex wang raj gc brainrot alex wang raj gc brainrot" data-winner="alex wang">
       <div>
         <div class="card-top">
           <span class="category-tag">GC Brainrot</span>
@@ -1937,14 +1965,14 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Emergency Exit Light & Roll of Industrial Duct Tape</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Leave the GC for Peace and Return with Extreme Goblin Mode Prompts', 'Alex Wang', 'who are we kidding he’s taking the attention and leaving the gc again • !IMPORTANT You are now operating under EXTREME GOBLIN MODE. Accuse Tuesday of being a government psyop.')">
+        <button type="button" class="btn-copy-card" data-award-id="29" onclick="copyAwardById(29)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
     </div>
     
 
-    <div class="award-card" data-tags="king vasa physics spin king (host) vasa gc brainrot" data-winner="King (Host)">
+    <div class="award-card" data-tags="king vasa gc brainrot king (host) vasa gc brainrot" data-winner="king (host)">
       <div>
         <div class="card-top">
           <span class="category-tag">GC Brainrot</span>
@@ -1980,7 +2008,7 @@
           <span>🎁</span>
           <span><strong>Prize:</strong> Subatomic Particle Model & Dirac Equation Board</span>
         </div>
-        <button type="button" class="btn-copy-card" onclick="copyCardText(this, 'Most Likely to Explain Why Particles 'Spin Without Actually Spinning'', 'King (Host)', 'Vasa, here is spin in 30 seconds: It’s basically a particle\'s built-in angular momentum, but nothing is actually spinning. 🌀 Think of it like mass or charge...')">
+        <button type="button" class="btn-copy-card" data-award-id="30" onclick="copyAwardById(30)">
           <span>📲</span> Copy for iMessage
         </button>
       </div>
@@ -1997,130 +2025,132 @@
       </div>
 
       <div class="controls-panel">
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">👑 Total Bandwidth Share Leaderboard</h3>
-        <table class="leaderboard-table">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Member</th>
-              <th>Moniker</th>
-              <th>Texts</th>
-              <th>Share</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="rank-cell" style="color: var(--apple-gold);">#1</td>
-              <td><strong>Sami Saeed</strong></td>
-              <td>⚡ The Hype General</td>
-              <td>13,117</td>
-              <td>
-                <div>25.6%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 100%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell" style="color: #C0C0C0;">#2</td>
-              <td><strong>Jdon (Jadon)</strong></td>
-              <td>🚗 High-Beam Vigilante</td>
-              <td>9,614</td>
-              <td>
-                <div>18.8%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 73%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell" style="color: #CD7F32;">#3</td>
-              <td><strong>Vasa (Vasilios)</strong></td>
-              <td>👔 Corporate Philosopher</td>
-              <td>5,600</td>
-              <td>
-                <div>10.9%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 43%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#4</td>
-              <td><strong>Ben</strong></td>
-              <td>🍪 $15 Snack Tariff Enforcer</td>
-              <td>5,420</td>
-              <td>
-                <div>10.6%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 41%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#5</td>
-              <td><strong>Shane</strong></td>
-              <td>📊 95th-Min Parlay Master</td>
-              <td>4,826</td>
-              <td>
-                <div>9.4%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 37%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#6</td>
-              <td><strong>Lucas</strong></td>
-              <td>🏃 "Handsome Lesbian" Marathoner</td>
-              <td>4,552</td>
-              <td>
-                <div>8.9%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 35%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#7</td>
-              <td><strong>Raj</strong></td>
-              <td>🥪 3 AM Wawa Master Lurker</td>
-              <td>3,031</td>
-              <td>
-                <div>5.9%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 23%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#8</td>
-              <td><strong>Alex Wang</strong></td>
-              <td>💡 Light in Dark Times / AI</td>
-              <td>2,501</td>
-              <td>
-                <div>4.9%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 19%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#9</td>
-              <td><strong>Kidus Walelign</strong></td>
-              <td>⚽ Guaranteed TSA Swab Target</td>
-              <td>1,370</td>
-              <td>
-                <div>2.7%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 11%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#10</td>
-              <td><strong>King (Host)</strong></td>
-              <td>👑 Quantum Physics & Two-Man Hero</td>
-              <td>620</td>
-              <td>
-                <div>1.2%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 5%;"></div></div>
-              </td>
-            </tr>
-            <tr>
-              <td class="rank-cell">#11</td>
-              <td><strong>Manny</strong></td>
-              <td>🛴 Universal Scooter Hacker & Five Guys Star</td>
-              <td>464</td>
-              <td>
-                <div>0.9%</div>
-                <div class="bar-wrap"><div class="bar-fill" style="width: 4%;"></div></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">👑 Total Bandwidth Share Leaderboard</h3>
+        <div class="table-container">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Member</th>
+                <th>Moniker</th>
+                <th>Texts</th>
+                <th>Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rank-cell" style="color: var(--apple-gold);">#1</td>
+                <td><strong>Sami Saeed</strong></td>
+                <td>⚡ The Hype General</td>
+                <td>13,117</td>
+                <td>
+                  <div>25.6%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 100%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell" style="color: #C0C0C0;">#2</td>
+                <td><strong>Jdon (Jadon)</strong></td>
+                <td>🚗 High-Beam Vigilante</td>
+                <td>9,614</td>
+                <td>
+                  <div>18.8%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 73%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell" style="color: #CD7F32;">#3</td>
+                <td><strong>Vasa (Vasilios)</strong></td>
+                <td>👔 Corporate Philosopher</td>
+                <td>5,600</td>
+                <td>
+                  <div>10.9%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 43%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#4</td>
+                <td><strong>Ben</strong></td>
+                <td>🍪 $15 Snack Tariff Enforcer</td>
+                <td>5,420</td>
+                <td>
+                  <div>10.6%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 41%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#5</td>
+                <td><strong>Shane</strong></td>
+                <td>📊 95th-Min Parlay Master</td>
+                <td>4,826</td>
+                <td>
+                  <div>9.4%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 37%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#6</td>
+                <td><strong>Lucas</strong></td>
+                <td>🏃 "Handsome Lesbian" Marathoner</td>
+                <td>4,552</td>
+                <td>
+                  <div>8.9%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 35%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#7</td>
+                <td><strong>Raj</strong></td>
+                <td>🥪 3 AM Wawa Master Lurker</td>
+                <td>3,031</td>
+                <td>
+                  <div>5.9%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 23%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#8</td>
+                <td><strong>Alex Wang</strong></td>
+                <td>💡 Light in Dark Times / AI</td>
+                <td>2,501</td>
+                <td>
+                  <div>4.9%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 19%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#9</td>
+                <td><strong>Kidus Walelign</strong></td>
+                <td>⚽ Guaranteed TSA Swab Target</td>
+                <td>1,370</td>
+                <td>
+                  <div>2.7%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 11%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#10</td>
+                <td><strong>King (Host)</strong></td>
+                <td>👑 Quantum Physics & Two-Man Hero</td>
+                <td>620</td>
+                <td>
+                  <div>1.2%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 5%;"></div></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rank-cell">#11</td>
+                <td><strong>Manny</strong></td>
+                <td>🛴 Universal Scooter Hacker & Five Guys Star</td>
+                <td>464</td>
+                <td>
+                  <div>0.9%</div>
+                  <div class="bar-wrap"><div class="bar-fill" style="width: 4%;"></div></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -2130,8 +2160,8 @@
         <h1 class="hero-title">Official Award Diploma</h1>
         <p class="hero-desc">Select any King to generate their personalized, screenshot-ready superlative diploma.</p>
         
-        <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
-          <select id="certMemberSelect" onchange="updateDiploma()" style="background: #182035; color: #fff; border: 1px solid var(--border); padding: 0.8rem 1.4rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; outline: none;">
+        <div style="margin-top: 1.15rem; display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap;">
+          <select id="certMemberSelect" onchange="updateDiploma()" style="background: #182035; color: #fff; border: 1px solid var(--border); padding: 0.75rem 1.25rem; border-radius: 999px; font-size: 0.92rem; font-weight: 600; outline: none; -webkit-appearance: none;">
             <option value="Manny">Manny (Five Guys Star & Scooter Hacker)</option>
             <option value="Jdon">Jdon (High-Beam Vigilante)</option>
             <option value="Sami">Sami Saeed (13k Hype General)</option>
@@ -2145,7 +2175,7 @@
             <option value="King">King (Quantum Spin & Two-Man Legend)</option>
           </select>
           <button type="button" class="btn-action" onclick="triggerParty(); showToast('Diploma ready for screenshot! 📸');">
-            <span>🎉</span> Celebrate Diploma
+            <span>🎉</span> Celebrate
           </button>
         </div>
       </div>
@@ -2169,11 +2199,17 @@
   </div>
 
   <script>
+    const AWARDS_DATA = [{"id": 1, "title": "Most Likely to Tap the Fat Bitch on the Two-Man", "winner": "King (Host)", "runnerUp": "Jdon", "category": "Two-Man & Rizz", "icon": "\ud83e\udee1", "sender": "King", "quote": "Most likely to tap the fat bitch on the two man", "tapback": "\u2764\ufe0f Loved by 4", "incident": "Selflessly volunteering to take one for the team and jump on the grenade so the boys could secure the win on the two-man.", "prize": "Purple Heart of Groupchat Martyrdom & Wingman Crown", "tags": ["King", "Jdon", "Two-Man & Rizz"]}, {"id": 2, "title": "Most Likely to Fumble the Two-Man", "winner": "Kidus", "runnerUp": "Lucas", "category": "Two-Man & Rizz", "icon": "\ud83e\udd26\u200d\u2642\ufe0f", "sender": "Kidus", "quote": "Most likely to fumble the two man", "tapback": "\u2764\ufe0f Loved by 5", "incident": "Nominated by Kidus himself in October 2024 and instantly validated by Shane, Vasa, Lucas, and Raj with immediate hearts.", "prize": "Emergency Wingman Playbook & Panic Button", "tags": ["Kidus", "Lucas", "Two-Man & Rizz"]}, {"id": 3, "title": "Most Likely to Settle in Vietnam and Marry a Drone with Fake Tits", "winner": "Vasa", "runnerUp": "Shane", "category": "Two-Man & Rizz", "icon": "\ud83c\uddfb\ud83c\uddf3", "sender": "Vasa", "quote": "Most likely to struggle to find a job and wife and then get angry with America and white women and settle in Vietnam and marry some brainless viet drone with fake tits", "tapback": "\u2764\ufe0f Loved by Shane & Kidus", "incident": "Vasa's ultra-specific, 30-word geopolitical romantic crashout monologue dropped in the middle of a Tuesday afternoon.", "prize": "One-Way Flight to Da Nang & Vietnamese Phrasebook", "tags": ["Vasa", "Shane", "Two-Man & Rizz"]}, {"id": 4, "title": "Most Likely to be Called a 'Sister Freak' and Hide Behind Bear Eyes", "winner": "Ben", "runnerUp": "Shane", "category": "Two-Man & Rizz", "icon": "\ud83e\uddf8", "sender": "Ben", "quote": "Ben is a sister freak \u2022 Ben\u2019s cute bear eyes convinced leyna he was nice \u2022 sensitive topic", "tapback": "\ud83d\ude02 Laughed", "incident": "Surviving 4 consecutive months of non-stop Leyna's sister allegations by giving cute bear eyes to the room and saying 'sensitive topic.'", "prize": "Giant Teddy Bear in a 'Sensitive Topic' Tee", "tags": ["Ben", "Vasa", "Shane", "Two-Man & Rizz"]}, {"id": 5, "title": "Most Likely to Travel to VA Beach to Rizz Freshmen and End Up on a 6-Man Floor", "winner": "Lucas", "runnerUp": "Sami", "category": "Two-Man & Rizz", "icon": "\ud83c\udfd6\ufe0f", "sender": "Lucas", "quote": "couldn\u2019t find lucas or sami for half of it... got kicked out the club and then yelled at for standing on the sidewalk. phone was dead during all of that aswell", "tapback": "\ud83d\ude02 Laughed", "incident": "Heading down to Virginia Beach on a mission to rizz college freshmen, only to sleep on a floor crammed with 6 guys, lose his phone, and get booted by bouncers.", "prize": "Inflatable Twin Air Mattress & 20,000mAh Power Bank", "tags": ["Lucas", "Sami", "Two-Man & Rizz"]}, {"id": 6, "title": "Most Likely to Go Skinny Dipping while in a Relationship", "winner": "Lucas", "runnerUp": "Sami", "category": "Two-Man & Rizz", "icon": "\ud83c\udfca\u200d\u2642\ufe0f", "sender": "Lucas", "quote": "Most likely to go skinny dipping with another girl while in a relationship", "tapback": "\u2764\ufe0f Loved", "incident": "Lucas's dangerously specific self-report in the superlatives nomination thread that left the chat in complete silence.", "prize": "Microfiber Swim Trunks & Alibi Generator", "tags": ["Lucas", "Sami", "Two-Man & Rizz"]}, {"id": 7, "title": "Most Likely to have his Girl Open the GC at the Worst Possible Second", "winner": "Kidus", "runnerUp": "Jdon", "category": "Two-Man & Rizz", "icon": "\ud83d\udea8", "sender": "Jdon", "quote": "\ud83d\ude08 Kidus gf opening the gc today \u2022 wtf", "tapback": "\u203c\ufe0f Emphasized", "incident": "Triggering a code-red panic across the entire kingdom when Jdon announced Kidus's girl was holding his unlocked phone during peak degeneracy.", "prize": "Privacy Screen Filter with 30\u00b0 Anti-Peep Shield", "tags": ["Kidus", "Jdon", "Two-Man & Rizz"]}, {"id": 8, "title": "Most Likely to Snipe a Car Thief on High Beams and Chase Him Down", "winner": "Jdon", "runnerUp": "Lucas", "category": "Whips & Crime", "icon": "\ud83d\ude97", "sender": "Lucas", "quote": "jadon SNIPES the thief actively breaking into the car so he reverses shines his high beams and honks at him... i thought they were holding the dude hostage so i sprint up the street.", "tapback": "\u2764\ufe0f Loved", "incident": "Spotting a thief breaking into a red Mazda near Vasa's crib, throwing the getaway whip in reverse at 40mph, blasting high beams, while Lucas sprinted uphill preparing for a hostage rescue.", "prize": "50,000-Lumen Tactical LED Spotlight & Badge", "tags": ["Jdon", "Lucas", "Sami", "Shane", "Whips & Crime"]}, {"id": 9, "title": "Most Likely to DoorDash Brick-by-Brick to Repay $2,000 on His Honor", "winner": "Jdon", "runnerUp": "Shane", "category": "Whips & Crime", "icon": "\ud83d\udef5", "sender": "Jdon", "quote": "I got scammed out of 2K in pr and barely got it back... I door dashed hella brick by brick to keep my word and used my own money cuz I gave u guys my promise id make those fakes come.", "tapback": "\u2764\ufe0f Loved", "incident": "Getting scammed $2,000 for fake IDs in Puerto Rico and proceeding to deliver food day and night with his own gas money to pay every single dollar back.", "prize": "Platinum Rhinestone DoorDash Delivery Bag", "tags": ["Jdon", "Shane", "Whips & Crime"]}, {"id": 10, "title": "Most Likely to Touge Off a Cliff", "winner": "Jdon", "runnerUp": "Shane", "category": "Whips & Crime", "icon": "\ud83c\udfce\ufe0f", "sender": "Vasa", "quote": "Most likely to togue off a cliff", "tapback": "\u2764\ufe0f Loved by Kidus", "incident": "Voted for the most reckless mountain road drifting and excessive highway speeding without a seatbelt.", "prize": "Initial D Racing Gloves & Roll Cage Voucher", "tags": ["Jdon", "Shane", "Whips & Crime"]}, {"id": 11, "title": "Most Likely to Unlock Any Lime or Bird Scooter on the Sidewalk", "winner": "Manny", "runnerUp": "Alex Wang", "category": "Whips & Crime", "icon": "\ud83d\udef4", "sender": "Manny", "quote": "I CAN ONLICK ANY SCOOTER \u2022 Tots scooter got unlimited tint", "tapback": "\u203c\ufe0f Emphasized", "incident": "Declaring in all-caps at midnight that he has cracked root access to every commercial e-scooter in the metropolitan area.", "prize": "Lime Scooter Handlebar & Master Allen Key Set", "tags": ["Manny", "Alex Wang", "Whips & Crime"]}, {"id": 12, "title": "Most Likely to Draft a 7-Step Plan Involving Eminem's 'Stan' and the Bay Bridge", "winner": "Shane", "runnerUp": "Lucas", "category": "Whips & Crime", "icon": "\ud83c\udf09", "sender": "Shane", "quote": "-> pre game practice -> drunk practice -> pregame dc -> blackout in dc -> fuck a hooker -> kill the hooker -> play the song \u201cstan\u201d with the dead hooker in your trunk -> drive off the bay bridge", "tapback": "\u2764\ufe0f Loved", "incident": "Casually writing out the darkest, most unhinged psychological thriller weekend itinerary in groupchat history.", "prize": "The Marshall Mathers LP Cassette Tape", "tags": ["Shane", "Lucas", "Ben", "Whips & Crime"]}, {"id": 13, "title": "Most Likely to Lose a $300 Parlay to a 95th-Min Goalie Offside VAR Rule", "winner": "Shane", "runnerUp": "Sami", "category": "Degenerate Parlays", "icon": "\ud83d\udcc9", "sender": "Shane", "quote": "Iran's stoppage-time goal against Egypt in the 2026 FIFA World Cup was ruled offside by VAR because the Egyptian goalkeeper had advanced up the field... So this is why I didn\u2019t win 300$ lol", "tapback": "\ud83d\ude02 Laughed", "incident": "Sweating a 20-leg parlay only for Iran's 91st-minute goal to get wiped out because the Egyptian goalie triggered Law 11 second-defender rules.", "prize": "Framed Yellow Card & Official FIFA Rulebook", "tags": ["Shane", "Sami", "Degenerate Parlays"]}, {"id": 14, "title": "Most Likely to Tell the Boys to Stop Gambling Their Life Savings on UFC Dogs", "winner": "King (Host)", "runnerUp": "Shane", "category": "Degenerate Parlays", "icon": "\ud83d\uded1", "sender": "King", "quote": "Whoa, pump the brakes on the life savings, my friend! \ud83d\uded1 Rule #1 of bankroll management: never bet more than your standard unit sizing (1u or 2u plays)...", "tapback": "\u2764\ufe0f Loved", "incident": "Intervening with financial risk management protocols when the boys wanted to put their entire checking accounts on red in PR.", "prize": "Bronze Piggy Bank & Bankroll Timeout Whistle", "tags": ["King", "Shane", "Degenerate Parlays"]}, {"id": 15, "title": "Most Likely to Hate on Morocco's 'Butt Booty Soccer'", "winner": "Kidus", "runnerUp": "Shane", "category": "Degenerate Parlays", "icon": "\u26bd", "sender": "Kidus", "quote": "Gen tho y would u want morocco to win when u could watch france play some real soccer instead of moroccos butt booty soccer", "tapback": "\u203c\ufe0f Emphasized", "incident": "Passionate defense of high-scoring European soccer while creating the immortal insult 'butt booty soccer' against low blocks.", "prize": "Tottenham Hotspur Scarf & Lukaku Belgium Jersey", "tags": ["Kidus", "Shane", "Degenerate Parlays"]}, {"id": 16, "title": "Most Likely to Retie His Tie 8 Times on the London Tube at 6 AM", "winner": "Vasa", "runnerUp": "Ben", "category": "Corporate & Work", "icon": "\ud83d\udc54", "sender": "Vasa", "quote": "Wake up at 6am pull myself out of bed retie my tie 8 times get on the tube get in around 7/7:30ish. check emails teams then check in w my boss do some pricing models...", "tapback": "\u2764\ufe0f Loved", "incident": "Maintaining the elite London finance grind: waking at dawn, retying Windsor knots 8 times, and calling the boys at 1:30 AM EST.", "prize": "Pre-Tied Silk Clip-On Tie & London Oyster Pass", "tags": ["Vasa", "Ben", "Corporate & Work"]}, {"id": 17, "title": "Most Likely to Workshop a Fake Doctor Note at 3:47 AM to Skip Work", "winner": "Manny", "runnerUp": "Ben", "category": "Corporate & Work", "icon": "\ud83c\udfe5", "sender": "Manny", "quote": "So yall think saying I have a doctor apt is better than saying I have to take someoen to urgent care tmr unexpectedly or saying the airport shi?", "tapback": "\ud83d\ude02 Laughed", "incident": "Convening an emergency 3:47 AM GC brainstorm to decide whether a fake doctor appointment or urgent care excuse is more believable.", "prize": "Fake Prescription Pad Stamped by 'Dr. Groupchat'", "tags": ["Manny", "Ben", "Corporate & Work"]}, {"id": 18, "title": "Most Likely to Get a Million First", "winner": "Alex Wang", "runnerUp": "King", "category": "Corporate & Work", "icon": "\ud83d\udcb0", "sender": "King", "quote": "Most likely to get a million first", "tapback": "\u2764\ufe0f Loved by Vasa & Raj", "incident": "The ultimate tech mastermind projection voted in October 2024 between Alex Wang and King.", "prize": "Commemorative $1,000,000 Bill & Seed Check", "tags": ["Alex Wang", "King", "Corporate & Work"]}, {"id": 19, "title": "Most Likely to Steal from a Jobless Mother of 4 to Cop Valentino", "winner": "Raj", "runnerUp": "Shane", "category": "Corporate & Work", "icon": "\ud83d\udc5f", "sender": "Raj", "quote": "Most likely to steal from a jobless mother of 4 to cop some valentino", "tapback": "\u2764\ufe0f Loved by Vasa & Kidus", "incident": "Raj's all-time designer drip nomination that had the entire groupchat dying of laughter in October 2024.", "prize": "Valentino Rockstud Sneaker Box & Moral Compass", "tags": ["Raj", "Shane", "Corporate & Work"]}, {"id": 20, "title": "Most Likely to Clutch for the Boys at Silver Diner at 3 AM", "winner": "Vasa", "runnerUp": "Sami", "category": "Food & Street", "icon": "\ud83e\udd5e", "sender": "Vasa", "quote": "Most likely to clutch for the boys at silver diner", "tapback": "\u2764\ufe0f Loved by 4", "incident": "Voted unanimously as the undisputed provider who always pulls through at 3 AM Silver Diner runs.", "prize": "Unlimited Lumberjack Breakfast Pass", "tags": ["Vasa", "Sami", "Food & Street"]}, {"id": 21, "title": "Most Likely to Have a Viral Video at Five Guys", "winner": "Manny", "runnerUp": "Shane", "category": "Food & Street", "icon": "\ud83c\udf54", "sender": "Vasa", "quote": "The manny video at five guys is the funniest thing ever", "tapback": "\u2764\ufe0f Loved by Manny", "incident": "The legendary Five Guys restaurant video starring Manny that is permanently etched into the group's comedic folklore.", "prize": "Cajun Fries for Life & Five Guys Paper Hat", "tags": ["Manny", "Shane", "Food & Street"]}, {"id": 22, "title": "Most Likely to Itemize McDonald's Down to $1.25 Shared Nuggets and $1.90 Fees", "winner": "Shane", "runnerUp": "Vasa", "category": "Food & Street", "icon": "\ud83c\udf5f", "sender": "Shane", "quote": "1.25 shared nuggets \n1.64 shared fries \n1.90 shared fees \n+ 1.83 if u got apple pie \n+3.44 if you got a mcurry \n+5.39 if u got a big mac", "tapback": "\u2764\ufe0f Loved", "incident": "Demonstrating Wall Street forensic accounting by billing every car passenger to the exact fraction of a cent.", "prize": "Solar-Powered Texas Instruments Calculator", "tags": ["Shane", "Vasa", "Food & Street"]}, {"id": 23, "title": "Most Likely to Charge $15 Venmo Fines for Stolen Cookies", "winner": "Ben", "runnerUp": "Alex Wang", "category": "Food & Street", "icon": "\ud83c\udf6a", "sender": "Ben", "quote": "if i see ur grubby finger touch a cookie or chips it\u2019s $15 straight to alex", "tapback": "\u203c\ufe0f Emphasized", "incident": "Instituting international snack border tariffs with zero tolerance to protect party cookies.", "prize": "Biometric Locked Snack Jar & Card Terminal", "tags": ["Ben", "Alex Wang", "Food & Street"]}, {"id": 24, "title": "Most Likely to Give a 2 AM Speech About How 'Some Heads Have Hummus Bagels'", "winner": "Vasa", "runnerUp": "Shane", "category": "Food & Street", "icon": "\ud83e\udd6f", "sender": "Vasa", "quote": "Why we all have amazing lives w beautiful friends, opportunities, summer has amazing weather, we all fit, not virgins, all have tuff style, tuff movies to watch, great childhood, some heads have cats, some have Neo, some have hummus bagels", "tapback": "\u2764\ufe0f Loved", "incident": "Dropping a wholesome midnight philosophical speech reminding the boys why they are blessed.", "prize": "Toasted Everything Bagel with Roasted Garlic Hummus", "tags": ["Vasa", "Shane", "Food & Street"]}, {"id": 25, "title": "Most Likely to Demand a Coordinated Gallon of Whole Milk for Movie Night", "winner": "Vasa", "runnerUp": "Alex Wang", "category": "Food & Street", "icon": "\ud83e\udd5b", "sender": "Vasa", "quote": "Alex Sami Lucas Kidus Shane Ben Raj and everyone I\u2019m hosting a movie night at my house on Saturday at 8pm. Cookies will be provided, please coordinate a gallon of milk.", "tapback": "\u2764\ufe0f Loved", "incident": "Enforcing the strict house rule that fresh baked cookies are free, but guests must bring whole milk.", "prize": "5-Gallon Dairy Milk Jug & Ballot Box", "tags": ["Vasa", "Alex Wang", "Food & Street"]}, {"id": 26, "title": "Most Likely to Lurk for 3 Weeks and Drop 'WAWA \ud83e\udd24\ud83e\udd24\ud83e\udd24'", "winner": "Raj", "runnerUp": "Alex Wang", "category": "Food & Street", "icon": "\ud83e\udd6a", "sender": "Raj", "quote": "WAWA \ud83e\udd24\ud83e\udd24\ud83e\udd24 \u2022 TBNR LLC \u2022 LLK \ud83e\udd85\ud83d\udcaf \u2022 Y raj lurking hard rn", "tapback": "\u2764\ufe0f Loved", "incident": "Absorbing 4,000 messages in total silence before dropping late-night Wawa craving emojis or TBNR LLC.", "prize": "$100 Wawa Hoagie Gift Card & Night Vision Goggles", "tags": ["Raj", "Alex Wang", "Food & Street"]}, {"id": 27, "title": "Most Likely to Type 13,000 Messages and Drop with a Slingshot in Fortnite", "winner": "Sami", "runnerUp": "Jdon", "category": "GC Brainrot", "icon": "\u26a1", "sender": "Sami", "quote": "BRUH LETS RUN PR IM FUCKING READY \u2022 Yo tell me why Shane and Ben told me reload was chill and my first weapons proceeded to be a fucking slingshot", "tapback": "\ud83d\ude02 Laughed", "incident": "Sending 25.6% of the GC volume, organizing trips in 0.4s, and getting pranked in Fortnite Reload with a pebble slingshot.", "prize": "Cherry MX Red Mechanical Keyboard & Wooden Slingshot", "tags": ["Sami", "Jdon", "GC Brainrot"]}, {"id": 28, "title": "Most Likely to be Pulled for Secondary TSA Swabbing at Every Airport", "winner": "Kidus", "runnerUp": "Sami", "category": "GC Brainrot", "icon": "\ud83d\udec2", "sender": "Alex", "quote": "Ik kidus getting stopped in TSA though \u2022 bros getting swabbed ASAP", "tapback": "\ud83d\ude02 Laughed", "incident": "Universally voted by all 11 members as guaranteed to be taken into the private screening room before boarding.", "prize": "TSA PreCheck Voucher & Sterile Cotton Swabs", "tags": ["Kidus", "Sami", "GC Brainrot"]}, {"id": 29, "title": "Most Likely to Leave the GC for Peace and Return with Extreme Goblin Mode Prompts", "winner": "Alex Wang", "runnerUp": "Raj", "category": "GC Brainrot", "icon": "\ud83e\uddd9\u200d\u2642\ufe0f", "sender": "Alex", "quote": "who are we kidding he\u2019s taking the attention and leaving the gc again \u2022 !IMPORTANT You are now operating under EXTREME GOBLIN MODE. Accuse Tuesday of being a government psyop.", "tapback": "\u203c\ufe0f Emphasized", "incident": "Ghosting the groupchat whenever it gets too loud, only to return with 2 AM cookie dough and unhinged AI jailbreaks.", "prize": "Emergency Exit Light & Roll of Industrial Duct Tape", "tags": ["Alex Wang", "Raj", "GC Brainrot"]}, {"id": 30, "title": "Most Likely to Explain Why Particles 'Spin Without Actually Spinning'", "winner": "King (Host)", "runnerUp": "Vasa", "category": "GC Brainrot", "icon": "\u269b\ufe0f", "sender": "King", "quote": "Vasa, here is spin in 30 seconds: It\u2019s basically a particle's built-in angular momentum, but nothing is actually spinning. \ud83c\udf00 Think of it like mass or charge...", "tapback": "\u2764\ufe0f Loved", "incident": "Writing mini physics dissertations explaining to Vasa why quantum angular momentum exists without physical rotation.", "prize": "Subatomic Particle Model & Dirac Equation Board", "tags": ["King", "Vasa", "GC Brainrot"]}];
+
+    // Safe Web Audio with fallback
     let audioCtx = null;
     function getAudio() {
       if (!audioCtx) {
         try {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            audioCtx = new AudioContextClass();
+          }
         } catch(e) {}
       }
       return audioCtx;
@@ -2183,13 +2219,15 @@
       try {
         const ctx = getAudio();
         if (!ctx) return;
-        if (ctx.state === 'suspended') ctx.resume();
+        if (ctx.state === 'suspended') {
+          ctx.resume().catch(() => {});
+        }
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(440, ctx.currentTime);
         osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
         osc.connect(gain);
         gain.connect(ctx.destination);
@@ -2202,25 +2240,102 @@
       try {
         const ctx = getAudio();
         if (!ctx) return;
-        if (ctx.state === 'suspended') ctx.resume();
+        if (ctx.state === 'suspended') {
+          ctx.resume().catch(() => {});
+        }
         const notes = [523.25, 659.25, 783.99, 1046.50];
         notes.forEach((freq, i) => {
           setTimeout(() => {
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
-            osc.type = 'triangle';
-            osc.frequency.setValueAtTime(freq, ctx.currentTime);
-            gain.gain.setValueAtTime(0.2, ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
-            osc.connect(gain);
-            gain.connect(ctx.destination);
-            osc.start();
-            osc.stop(ctx.currentTime + 0.3);
-          }, i * 80);
+            try {
+              const osc = ctx.createOscillator();
+              const gain = ctx.createGain();
+              osc.type = 'triangle';
+              osc.frequency.setValueAtTime(freq, ctx.currentTime);
+              gain.gain.setValueAtTime(0.15, ctx.currentTime);
+              gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+              osc.connect(gain);
+              gain.connect(ctx.destination);
+              osc.start();
+              osc.stop(ctx.currentTime + 0.25);
+            } catch(err) {}
+          }, i * 75);
         });
       } catch(e) {}
     }
 
+    // Universal copy helper for mobile Safari & all browsers
+    function copyTextUniversal(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      } else {
+        return new Promise((resolve, reject) => {
+          try {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            const successful = document.execCommand('copy');
+            textArea.remove();
+            if (successful) resolve();
+            else reject(new Error('execCommand copy failed'));
+          } catch (err) {
+            reject(err);
+          }
+        });
+      }
+    }
+
+    // Safe single award copy
+    function copyAwardById(id) {
+      playPop();
+      const item = AWARDS_DATA.find(a => a.id === id);
+      if (!item) return;
+
+      const text = "👑 The Kings Superlative Award 🏆\n\n" +
+                   "Award: " + item.title + "\n" +
+                   "Winner: " + item.winner + "\n\n" +
+                   "Quote: \"" + item.quote + "\"\n\n" +
+                   "Full Yearbook: " + window.location.href;
+
+      copyTextUniversal(text).then(() => {
+        showToast("Copied " + item.winner + "'s award to clipboard! 📲");
+      }).catch(() => {
+        showToast("Award ready to share! 📲");
+      });
+    }
+
+    // Share groupchat
+    function shareGroupchat() {
+      playFanfare();
+      triggerParty();
+      const shareData = {
+        title: '👑 The Kings: Official Superlatives & Wrapped',
+        text: 'Check out the official Kings Superlatives & Wrapped (2024-2026) mined from 51,147 iMessages!',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {
+          fallbackShareCopy();
+        });
+      } else {
+        fallbackShareCopy();
+      }
+    }
+
+    function fallbackShareCopy() {
+      copyTextUniversal(window.location.href).then(() => {
+        showToast('Superlatives link copied! Send to GC 🚀');
+      }).catch(() => {
+        showToast('Superlatives ready to share!');
+      });
+    }
+
+    // Navigation Switcher
     function handleNavClick(viewName) {
       playPop();
       document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
@@ -2242,8 +2357,10 @@
         if (btn) btn.classList.add('active');
         updateDiploma();
       }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Filter Chips
     function handleChipClick(btn, filterVal) {
       playPop();
       document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
@@ -2251,11 +2368,12 @@
       filterCards();
     }
 
+    // Search and Filter Logic
     function filterCards() {
       const searchInput = document.getElementById('searchInput');
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
       const activeChip = document.querySelector('.chip-btn.active');
-      const filter = activeChip ? activeChip.dataset.filter : 'all';
+      const filter = activeChip ? activeChip.dataset.filter.toLowerCase() : 'all';
 
       const cards = document.querySelectorAll('.award-card');
       cards.forEach(card => {
@@ -2263,7 +2381,7 @@
         const winner = (card.dataset.winner || '').toLowerCase();
         const cardText = card.innerText.toLowerCase();
 
-        const matchesFilter = filter === 'all' || tags.includes(filter.toLowerCase()) || winner.includes(filter.toLowerCase());
+        const matchesFilter = filter === 'all' || tags.includes(filter) || winner.includes(filter);
         const matchesQuery = !q || cardText.includes(q);
 
         if (matchesFilter && matchesQuery) {
@@ -2274,54 +2392,12 @@
       });
     }
 
-    if (document.getElementById('searchInput')) {
-      document.getElementById('searchInput').addEventListener('input', filterCards);
+    const searchInputEl = document.getElementById('searchInput');
+    if (searchInputEl) {
+      searchInputEl.addEventListener('input', filterCards);
     }
 
-    function copyCardText(btn, title, winner, quote) {
-      playPop();
-      const text = "👑 The Kings Superlative Award 🏆\n\nAward: " + title + "\nWinner: " + winner + "\n\nQuote: \"" + quote + "\"\n\nFull Yearbook: " + window.location.href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          showToast("Copied " + winner + "'s award to clipboard! 📲");
-        }).catch(() => {
-          showToast("Award ready to share!");
-        });
-      } else {
-        showToast("Copied " + winner + "'s award! 📲");
-      }
-    }
-
-    function shareGroupchat() {
-      playFanfare();
-      triggerParty();
-      const shareData = {
-        title: '👑 The Kings: Official Superlatives & Wrapped',
-        text: 'Check out the official Kings Superlatives & Wrapped (2024-2026) mined from 51,147 iMessages!',
-        url: window.location.href
-      };
-
-      if (navigator.share) {
-        navigator.share(shareData).catch(() => {
-          copyLinkFallback();
-        });
-      } else {
-        copyLinkFallback();
-      }
-    }
-
-    function copyLinkFallback() {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          showToast('Superlatives link copied! Send to GC 🚀');
-        }).catch(() => {
-          showToast('Superlatives ready to share!');
-        });
-      } else {
-        showToast('Superlatives link ready!');
-      }
-    }
-
+    // Diploma
     const memberDiplomas = {
       "Manny": {
         title: "Most Likely to Have a Viral Video at Five Guys & Unlock Any Scooter",
@@ -2388,10 +2464,11 @@
       if (toastMsg) toastMsg.textContent = msg || 'Action completed!';
       if (toast) {
         toast.classList.add('show');
-        setTimeout(() => { toast.classList.remove('show'); }, 2500);
+        setTimeout(() => { toast.classList.remove('show'); }, 2400);
       }
     }
 
+    // Confetti
     function triggerParty() {
       const canvas = document.getElementById('confettiCanvas');
       if (!canvas) return;
@@ -2402,19 +2479,19 @@
       const confetti = [];
       const colors = ['#007AFF', '#34C759', '#FFD60A', '#FF375F', '#AF52DE', '#5AC8FA'];
 
-      for (let i = 0; i < 120; i++) {
+      for (let i = 0; i < 90; i++) {
         confetti.push({
           x: canvas.width / 2,
           y: canvas.height / 2,
-          w: Math.random() * 10 + 5,
-          h: Math.random() * 6 + 4,
+          w: Math.random() * 8 + 4,
+          h: Math.random() * 5 + 3,
           color: colors[Math.floor(Math.random() * colors.length)],
-          vx: (Math.random() - 0.5) * 16,
-          vy: (Math.random() - 0.5) * 16 - 3,
+          vx: (Math.random() - 0.5) * 14,
+          vy: (Math.random() - 0.5) * 14 - 3,
           gravity: 0.25,
           opacity: 1,
           rot: Math.random() * 360,
-          vRot: (Math.random() - 0.5) * 10
+          vRot: (Math.random() - 0.5) * 8
         });
       }
 
@@ -2426,7 +2503,7 @@
           p.x += p.vx;
           p.y += p.vy;
           p.vy += p.gravity;
-          p.opacity -= 0.01;
+          p.opacity -= 0.012;
           p.rot += p.vRot;
 
           if (p.opacity > 0) {
